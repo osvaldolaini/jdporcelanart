@@ -35,7 +35,7 @@ Route::group(['namespace' => 'Admin','middleware' => ['auth','RegisterLogging']]
     Route::resource('/assinantes','SubscriberController')->names('subscriber')->parameters(['assinantes' => 'subscriber'])->middleware('AccessLevel:10');
     Route::post('/send-response/{email}','EmailController@response')->name('email.response')->middleware('AccessLevel:10');
     Route::resource('/noticias','ArticleController')->names('article')->parameters(['noticias' => 'article'])->middleware('AccessLevel:10');
-    Route::resource('/eventos','EventController')->names('event')->parameters(['eventos' => 'event'])->middleware('AccessLevel:10');
+    Route::resource('/cursos','EventController')->names('event')->parameters(['cursos' => 'event'])->middleware('AccessLevel:10');
     Route::resource('/avisos','AlertController')->names('alert')->parameters(['avisos' => 'alert'])->middleware('AccessLevel:10');
     Route::resource('/views','ViewController')->names('view')->parameters(['views' => 'view'])->middleware('AccessLevel:10');
 });

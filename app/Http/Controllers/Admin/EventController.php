@@ -14,17 +14,17 @@ use Illuminate\Support\Facades\Storage;
 class EventController extends Controller
 {
     //navegação
-    private $navigation = array('title'=>'Eventos','link'=>'event.index');
+    private $navigation = array('title'=>'Cursos','link'=>'event.index');
     private $new_navigation = array('title'=>'Novo evento ','link'=>'event.create');
     //textos para as mensagens e títulos
     private $configs = array(
-        'new'                   => 'Novo evento ',
-        'msg-success-save'      => 'Evento cadastrado com sucesso',
-        'msg-error-save'        => 'Não foi possivel cadastrar o evento',
-        'msg-success-delete'    => 'Evento excluido com sucesso',
-        'msg-error-delete'      => 'Não foi possivel excluir o evento',
-        'msg-not-found'         => 'Evento não encontrado',
-        'location'              => 'eventos',
+        'new'                   => 'Novo curso ',
+        'msg-success-save'      => 'Curso cadastrado com sucesso',
+        'msg-error-save'        => 'Não foi possivel cadastrar o curso',
+        'msg-success-delete'    => 'Curso excluido com sucesso',
+        'msg-error-delete'      => 'Não foi possivel excluir o curso',
+        'msg-not-found'         => 'Curso não encontrado',
+        'location'              => 'cursos',
     );
     /**
      * Display a listing of the resource.
@@ -48,7 +48,7 @@ class EventController extends Controller
         }
 
         return view('admin.events.listAll',[
-            'title_postfix' => 'Notícias',
+            'title_postfix' => 'Cursos',
             'navigation'    => $this->new_navigation,
             'data'          => $data,
             'accesslevel'   => 10,

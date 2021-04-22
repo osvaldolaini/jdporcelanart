@@ -14,9 +14,9 @@ return [
     |
     */
 
-    'title' =>  'ASSGAPA',
+    'title' =>  'SPARK',
     'title_prefix' => '',
-    'title_postfix' => '| Associação de Suboficiais e Sargentos da Guarnição de Aeronáutica de Porto Alegre',
+    'title_postfix' => '| Despachante de armas',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,13 +45,13 @@ return [
     |
     */
 
-    'logo' => 'ASSGAPA',
+    'logo' => 'SPARK',
     'logo_img' => 'vendor/adminlte/dist/img/small_logo.png',
     //'logo_img' => 'vendor/adminlte/dist/img/assgapaLogo.png',
     'logo_img_class' => 'brand-image img-circle ',
     'logo_img_xl' => 'vendor/adminlte/dist/img/logo_1.png',
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'ASSGAPA',
+    'logo_img_alt' => 'SPARK',
 
     /*
     |--------------------------------------------------------------------------
@@ -257,13 +257,7 @@ return [
             'accesslevel' => 10,
             'header' => 'Site'
         ],
-        [
-            'accesslevel' => 10,
-            'text'  => 'Ambientes',
-            'url'   => 'ambientes',
-            'icon'  => 'fas fa-home',
-            'active'=> ['ambientes', 'ambientes*', 'regex:@^convenambientesios/[0-9]+$@'],
-        ],
+
         [
             'accesslevel' => 10,
             'text'  => 'Parceiros',
@@ -271,13 +265,7 @@ return [
             'icon'  => 'fas fa-address-book',
             'active'=> ['parceiros', 'parceiros*', 'regex:@^parceiros/[0-9]+$@'],
         ],
-        [
-            'accesslevel' => 10,
-            'text'  => 'Convênios',
-            'url'   => 'convenios',
-            'icon'  => 'fas fa-address-book',
-            'active'=> ['convenios', 'convenios*', 'regex:@^convenios/[0-9]+$@'],
-        ],
+
         [
             'accesslevel' => 10,
             'text'  => 'Notícias',
@@ -294,10 +282,10 @@ return [
         ],
         [
             'accesslevel' => 10,
-            'text'  => 'Eventos',
-            'url'   => 'eventos',
-            'icon'  => 'fas fa-glass-cheers',
-            'active'=> ['eventos', 'eventos*', 'regex:@^eventos/[0-9]+$@'],
+            'text'  => 'Cursos',
+            'url'   => 'cursos',
+            'icon'  => 'fas fa-user-shield',
+            'active'=> ['cursos', 'cursos*', 'regex:@^cursos/[0-9]+$@'],
         ],
         [
             'accesslevel' => 10,
@@ -306,13 +294,7 @@ return [
             'icon'  => 'fas fa-hashtag',
             'active'=> ['Mídias sociais', 'Mídias sociais*', 'regex:@^Mídias sociais/[0-9]+$@'],
         ],
-        [
-            'accesslevel' => 10,
-            'text'  => 'Esportes',
-            'url'   => 'esportes',
-            'icon'  => 'fas fa-volleyball-ball',
-            'active'=> ['esportes', 'esportes*', 'regex:@^esportes/[0-9]+$@'],
-        ],
+
         [
             'accesslevel' => 10,
             'text'  => 'Emails',
@@ -349,14 +331,7 @@ return [
             'active'=> ['config','regex:@^config/[0-9]+$@'],
             'level' => 1,
         ],
-        [
-            'accesslevel' => 1,
-            'text'  => 'Informações',
-            'url'   => '/informacoes',
-            'icon'  => 'fas fa-info-circle',
-            'active'=> ['informacoes','regex:@^informacoes/[0-9]+$@'],
-            'level' => 1,
-        ],
+
         [
             'accesslevel' => 1,
             'text'  => 'logs',
