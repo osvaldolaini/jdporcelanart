@@ -1,0 +1,108 @@
+$box-width: 260px;
+$box-width-translate:$box-width/2;
+$box-height: 260px;
+
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.stage {
+	list-style: none;
+	padding: 0;
+}
+
+/*************************************
+Build the scene and rotate on hover
+**************************************/
+
+.scene {
+	width: $box-width;
+	height: $box-height;
+	margin: 30px;
+	float: left;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
+}
+
+.movie {
+	width: $box-width;
+	height: $box-height;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translateZ(-$box-width-translate);
+	-moz-transform: translateZ(-$box-width-translate);
+	transform: translateZ(-$box-width-translate);
+	-webkit-transition: -webkit-transform 350ms;
+	-moz-transition: -moz-transform 350ms;
+	transition: transform 350ms;
+}
+
+.movie:hover {
+	-webkit-transform: rotateY(-78deg) translateZ(20px);
+	-moz-transform: rotateY(-78deg) translateZ(20px);
+	transform: rotateY(-78deg) translateZ(20px);
+}
+
+/*************************************
+Transform and style the two planes
+**************************************/
+
+.movie .poster, 
+.movie .info {
+	position: absolute;
+	width: $box-width;
+	height: $box-height;
+	/*background-color: #fff;*/
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.movie .poster  {
+	-webkit-transform: translateZ($box-width-translate);
+	-moz-transform: translateZ($box-width-translate);
+	transform: translateZ($box-width-translate);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.movie .info {
+
+	-webkit-transform: rotateY(90deg) translateZ($box-width-translate);
+	-moz-transform: rotateY(90deg) translateZ($box-width-translate);
+	transform: rotateY(90deg) translateZ($box-width-translate);
+	border: 1px solid $ol-color;
+	border-radius:20px;
+	font-size: 0.75em;
+}
+
+
+/*************************************
+Movie information
+**************************************/
+
+.info .imgInfo {
+	height:40%;
+	background: top center;
+	background-repeat: no-repeat;
+	text-shadow: 0px 1px 1px rgba(0,0,0,1);
+}
+
+
+.info p {
+	padding-top:10%;
+	color: $ol-color;
+	border-top: 10px solid $ol-color;
+}
+
+
+/*************************************
+Media Queries
+**************************************/
+@media screen and (max-width: 767px){
+	.scene {
+		float: none;
+		margin: 30px auto 60px;
+	}
+}

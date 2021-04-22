@@ -1,0 +1,32 @@
+
+// 
+//
+// Minha estilização para o nav bar
+//
+
+
+//=====  Navbar  =====
+
+.ol-footer{
+
+    font-family: 'Amaranth';
+    color:$ol-color;
+    background-color:$bg-color;
+    img{
+      width:10%;
+    }
+    .copyright{
+      font-size: $font-size-base * 1;
+    }
+    @media only screen and (max-width: 600px) {
+        img {
+           width:20%;
+        }
+        .copyright{
+          font-size: $font-size-base * 0.5;
+          text-align:center;
+        }
+    }
+
+}
+

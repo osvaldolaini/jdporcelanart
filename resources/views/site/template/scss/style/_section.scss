@@ -1,0 +1,191 @@
+
+// 
+//
+// Minha estilização para o nav bar
+//
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+@mixin image-bg(){
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin box-shedow($color-box) {
+    -webkit-box-shadow: 0 0 1em 1em #000;
+    -moz-box-shadow:    0 0 1em 1em #000;
+    box-shadow:         0 0 1em 1em #000;
+}
+
+.section {
+  min-height:100vh;
+  margin:0;
+  padding:0;
+  @include border-radius(0);
+}
+
+.about{
+    background-color:$ol-color;
+    padding-top:15vh;
+    .about-header{
+        width:100%;
+        font-size: $font-size-base * 3 ;
+        text-align:center;
+        color:$white;
+        font-family:'Montserrat';
+        text-transform: uppercase !important;
+    }
+    .about-body{
+        width:100%;
+        padding-top:15vh;
+        font-size: $font-size-base * 1 ;
+        text-align:center;
+        color:$white;
+        font-family:'Montserrat';
+       
+    }
+    @media only screen and (max-width: 600px) {
+        .about-body {
+            padding-top:10vh;
+            text-align:justify;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .about {
+        padding-top:10vh;
+    }
+}
+
+.services{
+    padding-top:15vh;
+    .services-header{
+        width:100%;
+        font-size: $font-size-base * 3 ;
+        text-align:center;
+        color:$ol-color;
+        font-family:'Montserrat';
+        text-transform: uppercase !important;
+    }
+    .services-body{
+        width:100%;
+        padding-top:15vh;
+        font-size: $font-size-base * 1 ;
+        text-align:center;
+        color:$ol-color;
+        font-family:'Montserrat';
+    }
+    @media only screen and (max-width: 600px) {
+        .services-body {
+            padding-top:10vh;
+            text-align:justify;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .services {
+        padding-top:10vh;
+    }
+}
+
+.projects{
+    padding-top:15vh;
+    .projects-header{
+        width:100%;
+        font-size: $font-size-base * 3 ;
+        text-align:center;
+        color:$ol-color;
+        font-family:'Montserrat';
+        text-transform: uppercase !important;
+    }
+    .projects-body{
+        width:100%;
+        padding-top:15vh;
+        font-size: $font-size-base * 1 ;
+        text-align:center;
+        color:$ol-color;
+        font-family:'Montserrat';
+        .projects-item {
+            text-align:center;
+            margin: 0;
+            img{
+                padding:0;
+                margin:0;
+                width:100%;
+                &:hover{
+                    -webkit-box-shadow: 0 0 1em 1em $ol-color-secondary;
+                    -moz-box-shadow:    0 0 1em 1em $ol-color-secondary;
+                    box-shadow:         0 0 1em 1em $ol-color-secondary;
+                }
+            }
+            .projects-caption p {
+                font-size: $font-size-base * 1 ;
+                font-style: italic;
+                color:$ol-color-secondary;
+                margin: 0;
+                padding: 0;
+                font-family: 'Amaranth','Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            }
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        .projects-body {
+            padding-top:10vh;
+            text-align:justify;
+            .portfolio-item {
+                margin: 0 0 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .projects {
+        padding-top:10vh;
+        #carouselExampleIndicators{
+            margin-left:0;
+            margin-right:0;
+            padding-bottom:5vh;
+            text-align:center;
+        }
+    }
+}
+.partners{
+    background-color:$ol-color;
+    //padding-top:15vh;
+    .partners-header{
+        width:100%;
+        font-size: $font-size-base * 3 ;
+        text-align:center;
+        color:$white;
+        font-family:'Montserrat';
+        text-transform: uppercase !important;
+    }
+    .partners-body{
+        width:80%;
+        margin-left: auto;
+        margin-right: auto;
+        //padding-top:15vh;
+        font-size: $font-size-base * 1 ;
+        color:$white;
+        font-family:'Montserrat';
+    }
+    @media only screen and (max-width: 600px) {
+        .partners-text {
+            padding-top:0vh;
+            text-align:justify;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .partners {
+        padding-top:0vh;
+    }
+}
