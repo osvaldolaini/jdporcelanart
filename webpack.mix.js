@@ -48,13 +48,12 @@ mix.scripts('resources/views/admin/template/js/main_admin.js','public/admin/js/m
 .version();
 
 mix.scripts('resources/views/site/template/js/app_site.js','public/site/assets/js/app_site.js')
-.scripts('resources/views/site/template/js/lazysizes.min.js','public/site/assets/js/lazysizes.min.js')
-.scripts('resources/views/site/template/js/jqBootstrapValidation.js','public/site/assets/js/jqBootstrapValidation.js')
-.scripts('resources/views/site/template/js/contact_me.js','public/site/assets/js/contact_me.js')
-.scripts('resources/views/admin/template/js/app_views.js','public/site/assets/js/app_views.js')
-.sass('resources/views/site/template/scss/style.scss', 'public/site/assets/css/style.css')
+.copyDirectory('resources/views/site/template/vendor', 'public/site/template/vendor')
+.copyDirectory('resources/views/site/template/images', 'storage/app/public/images/site')
+.sass('resources/views/site/template/scss/newstyle.scss', 'public/site/assets/css/newstyle.css')
+
 .minify([
-    'public/site/assets/css/style.css',
+    'public/site/assets/css/newstyle.css',
     'public/site/assets/js/app_site.js',
 ])
 

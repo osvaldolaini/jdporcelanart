@@ -1,0 +1,82 @@
+/*********************************
+			Contacts
+*********************************/
+
+.form-outline-style{
+
+	.form-group	{
+		position: relative;
+		margin-bottom: 50px;
+		label {
+			position: absolute;
+			top: 5px;
+			transition: .3s all ease;
+		}
+		.form-control {
+			border: none;
+			background: none;
+			padding-left: 0;
+			padding-right: 0;
+			border-radius: 0;
+			color: $white;
+			border-bottom: 1px solid rgba($spark-color-primary, .5);
+			&:active, &:focus {
+				outline: none;
+				box-shadow: none;
+				border-bottom: 1px solid rgba($spark-color-secondary, 1);
+			}
+		}
+		label {
+			font-size: 12px;
+			display: block;
+			margin-bottom: 0;
+			color: darken(#ccc, 10%);
+			text-transform: uppercase;
+			font-weight: 900;
+		}
+		&.focus {
+			background: $white;
+		}
+		&.field--not-empty {
+			label {
+				margin-top: -25px;
+			}
+		}
+	}
+}
+
+.form-control {
+			border: none;
+			background: none;
+			padding-left: 0;
+			padding-right: 0;
+			border-radius: 0;
+			color: $white;
+			border-bottom: 1px solid rgba($white, .5);
+			&:active, &:focus {
+				background: none;
+				outline: none;
+				box-shadow: none;
+				border-bottom: 1px solid rgba($white, 1);
+			}
+		}
+
+        .contact-info{
+            @include media-breakpoint-down(sm) {
+                text-align: center;
+            }
+            > div {
+                margin-bottom: 30px;
+            }
+            .contact-info-label {
+                font-size: 11px;
+                letter-spacing: .1rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                color: rgba($white, .5);
+            }
+            .contact-info-val {
+                font-size: 20px;
+                color: $white;
+            }
+        }

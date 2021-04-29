@@ -1,0 +1,62 @@
+/*********************************
+			About
+*********************************/
+.section {
+	padding: 4rem 0;
+	@include media-breakpoint-down(sm) {
+		padding: 2rem 0;
+	}
+	a {
+		&:hover {
+			color: $spark-color-primary;
+		}
+	}
+}
+.heading-h2 {
+	font-size: 32px;
+	color: $white;
+	font-weight: 900;
+	&.divider {
+		&:before {
+			position: absolute;
+			content: "";
+		}
+	}
+}
+.heading-h3 {
+	font-size: 26px;
+	font-weight: 900;
+	color: $white;
+}
+.lead {
+	font-size: 18px;
+	line-height: 30px
+}
+
+.section-heading-wrap {
+
+}
+.relative {
+	position: relative;
+}
+
+figure{
+	&.dotted-bg {
+		position: relative;
+		&:before {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 268px;
+            height: 224px;
+			/*background-image: url('../../../storage/images/site/dotted_light.png');*/
+			background-repeat: no-repeat;
+			@include media-breakpoint-down(md) {
+				right: 0px;
+			}
+		}
+	}
+}
+

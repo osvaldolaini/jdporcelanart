@@ -1,0 +1,84 @@
+/*********************************
+    NavBar small com offcanvas
+*********************************/
+    @media (max-width: 767.98px) {
+        .offcanvas-collapse {
+            position: fixed;
+            top: 56px;
+            /* Height of navbar */
+            bottom: 0;
+            width: 100%;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            overflow-y: auto;
+            /*background-color: #212529;*/
+            transition: -webkit-transform .3s ease-in-out;
+            transition: transform .3s ease-in-out;
+            transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+            clip-path: polygon(100% 0, 100% 0, 100% 50%, 100% 50%);
+            -webkit-clip-path: polygon(100% 0, 100% 0, 100% 50%, 100% 50%);
+            transition: all 1.2s ease-out; 
+        }
+
+        .offcanvas-collapse.open {
+            clip-path: polygon(100% 0, 0 0, 50% 100%, 100% 100%);
+            -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%, 100% 100%); 
+            margin-left: -10%;
+            width: 130%;
+            height: 130%;
+        }
+
+    .navbar-nav {
+        padding-top: 2rem;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        list-style: none; }
+
+    .nav-item {
+        font-size: 18px;
+        line-height: 32px;
+        text-align: left;
+        width: 100%;
+        padding-top: 0.5rem;
+        padding-right: 1rem;
+        opacity: 0; 
+    }
+
+        .nav-item:nth-child(1) {
+            margin-left: 15%;
+            transition: ease-out 0.85s; 
+            transition: ease-in 0.1s; }
+        .nav-item:nth-child(2) {
+            margin-left: 20%;
+            transition: ease-out 0.70s; 
+            transition: ease-in 0.25s; }
+        .nav-item:nth-child(3) {
+            margin-left: 25%;
+            transition: ease-out 0.40s; 
+            transition: ease-in 0.40s;}
+        .nav-item:nth-child(4) {
+            margin-left: 30%;
+            transition: ease-out 0.40s; 
+            transition: ease-in 0.55s;}
+        .nav-item:nth-child(5) {
+            margin-left: 35%;
+            transition: ease-out 0.25s; 
+            transition: ease-in 0.70s;  }
+        .nav-item:nth-child(6) {
+            margin-left: 40%;
+            transition: ease-out 0.1s; 
+            transition: ease-in 0.85s; }
+        .nav-fade {
+            opacity: 1; 
+        } 
+    }
+    .nav-link .fa-crosshairs{
+    	font-size: 20pt;
+    }
+    .resize-on-scroll.nav-spark-small{
+        background-color: $black;
+        transition: background-color 0.7s ease 0s; 
+        transition: width 0.7s ease 0s; 
+    }

@@ -1,0 +1,102 @@
+/*********************************
+			Footer
+*********************************/
+.footer .footer_top {
+    padding: 140px 0 100px;
+    //background-color: $black;
+    border-top: 1px solid $spark-color-primary;
+}
+
+@media (max-width: 576px) {
+    .footer .footer_top {
+        padding: 70px 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .footer .footer_top {
+        padding: 70px 0;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .footer .footer_top {
+        padding: 100px 0;
+    }
+}
+
+.footer img {
+    margin-bottom: 35px;
+}
+
+@media (max-width: 576px) {
+    .footer .single_footer {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .footer .single_footer {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .footer .single_footer {
+        margin-bottom: 20px;
+    }
+}
+
+.footer .single_footer h4 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+@media (max-width: 576px) {
+    .footer .single_footer h4 {
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .footer .single_footer h4 {
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .footer .single_footer h4 {
+        margin-bottom: 15px;
+    }
+}
+
+.footer .single_footer p {
+    margin-bottom: 10px;
+    color: $spark-color-primary;
+}
+
+.footer .single_footer .list-unstyled li a {
+    color: $spark-color-primary;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-family: $font-family-sans-serif, $font-family-sans-serif-secondary,
+        sans-serif;
+}
+.footer .single_footer .list-unstyled li a:hover {
+    color: $spark-color-secondary !important;
+}
+
+.footer hr {
+    background-color: $spark-color-primary;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+.footer_icon{
+    color: $spark-color-primary !important;
+    text-decoration: none;
+}
+.footer_icon:hover{
+    color: $spark-color-secondary !important;
+    text-decoration: none;
+}

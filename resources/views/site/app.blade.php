@@ -9,6 +9,7 @@
     @include('site.partials.favicons')
     {{-- css --}}
     @include('site.assets.css')
+    
 
 </head>
 <body >
@@ -17,7 +18,7 @@
 
     {{-- Body Content --}}
     @yield('body')
-   
+
     {{-- Footer --}}
     @include('site.partials.footer')
 

@@ -1,0 +1,42 @@
+/*********************************
+			Services
+*********************************/
+
+.gutter-v3 {
+    margin-left: -60px!important;
+    margin-right: -60px!important;
+    @include media-breakpoint-down(md) {
+        margin-left: -15px!important;
+        margin-right: -15px!important;
+    }
+    > .col,
+    > [class*="col-"] {
+      padding-right: 60px!important;
+      padding-left: 60px!important;
+      @include media-breakpoint-down(md) {
+          padding-right: 15px!important;
+          padding-left: 15px!important;
+      }
+    }
+  }
+  .feature-v1 {
+	width:100%;
+    padding-bottom: 30px;
+	@include media-breakpoint-down(sm) {
+		text-align: center;
+	}
+	h3 {
+		font-size: 22px;
+		font-weight: 900;
+	}
+	p {
+		font-size: 16px;
+	}
+}
+.wrap-icon {
+    width:100%;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    color: $white;
+  }

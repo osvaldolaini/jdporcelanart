@@ -1,0 +1,59 @@
+/*********************************
+			Prelaoder
+*********************************/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100000;
+  overflow: hidden;
+  background: #000000;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  /*background-image: url(../img/preload.png);*/
+  width: 100vh;
+  height: 100vh;
+}
+#preloader-fixo
+{
+  content: "";
+  position: fixed;
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+  width: 150px;
+  height: 150px;
+}
+#preloader-spinner
+{
+  content: "";
+  position: fixed;
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+  width: 150px;
+  height: 150px;
+  -webkit-animation: animate-preloader 5s linear infinite;
+  animation: animate-preloader 5s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
