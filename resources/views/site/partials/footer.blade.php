@@ -6,17 +6,11 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_footer">
                         <a class="navbar-brand mr-auto mr-lg-0 my-0 pl-3" href="#">
-                            <picture>
-                                <source media="(min-width: 650px)"
-                                    srcset="{{ url('storage/images/site/logo_small_text.png') }}" />
-                                <source media="(min-width: 465px)"
-                                    srcset="{{ url('storage/images/site/logo_small_text.webp') }}" />
-                                <source media="(min-width: 650px)"
-                                    srcset="{{ url('storage/images/site/logo_small_text.png') }}" />
-                                <source media="(min-width: 465px)"
-                                    srcset="{{ url('storage/images/site/logo_small_text.webp') }}" />
-                                <img src="{{ url('storage/images/site/logo_small_text.png') }}" />
-                            </picture>
+                            <picture class="lazyload img-fluid">
+                                <source srcset="{{url('storage/images/site/logo_small_text.png')}}" />
+                                <source srcset="{{url('storage/images/site/logo_small_text.webp')}}"/>
+                                <img class="lazyload img-fluid" src="{{url('storage/images/site/logo_small_text.png')}}" />
+                            </picture >
                         </a>
                         <p>
                             {{ $config->meta_description }}
@@ -60,8 +54,7 @@
                         <div id="mc_embed_signup">
                             <div class="newsletter" id="newsletter">
                                 <div class="newsletter_form_container">
-                                    <form class="form-alterar" action="{{ url('/receber-noticias') }}" method="post"
-                                        accept-charset="utf-8" enctype="multipart/form-data">
+                                    <form method="post" class="form-outline-style" id="newsletterForm" >
                                         <div class="d-flex flex-row align-items-start justify-content-start">
                                             <input type="email" class="newsletter_input" name="email"
                                                 placeholder="Insira seu email" required="required">
@@ -70,6 +63,10 @@
                                             </button>
                                         </div>
                                     </form>
+                                    <div id="newsletter-message-warning" class="mt-4"></div>
+                                    <div id="newsletter-message-success">
+                                        <p>Assinatura concluída, obrigado!</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -28,7 +28,11 @@
                   <a href="{{url('servicos')}}" class="nav-link">SERVIÇOS</a>
                 </li>
                   <a href="{{url('')}}" class="logo">
-                    <img src="{{url('storage/images/site/logo.png')}}" class="logo">
+                    <picture class="lazyload img-fluid">
+                        <source srcset="{{url('storage/images/site/logo.png')}}" />
+                        <source srcset="{{url('storage/images/site/logo.webp')}}"/>
+                        <img class="lazyload img-fluid" src="{{url('storage/images/site/logo.png')}}" />
+                    </picture>
                   </a>
                 <li class="has-children">
                   <a href="{{url('cursos')}}" class="nav-link">CURSOS</a>
@@ -45,13 +49,11 @@
   <!--Nav bar small-->
   <nav class="navbar navbar-expand-lg fixed-top d-lg-none nav-spark nav-spark-small" >
       <a class="navbar-brand mr-auto mr-lg-0 my-0 pl-3" href="#" >
-        <picture>
-            <source media="(min-width: 650px)" srcset="{{url('storage/images/site/logo_small_text.png')}}" />
-            <source media="(min-width: 465px)" srcset="{{url('storage/images/site/logo_small_text.webp')}}"/>
-            <source media="(min-width: 650px)" srcset="{{url('storage/images/site/logo_small_text.png')}}" />
-            <source media="(min-width: 465px)" srcset="{{url('storage/images/site/logo_small_text.webp')}}" />
-            <img src="{{url('storage/images/site/logo_small_text.png')}}" />
-        </picture>
+        <picture class="lazyload img-fluid">
+            <source srcset="{{url('storage/images/site/logo_small_text.png')}}" />
+            <source srcset="{{url('storage/images/site/logo_small_text.webp')}}"/>
+            <img class="lazyload img-fluid" src="{{url('storage/images/site/logo_small_text.png')}}" />
+        </picture >
       </a>
       <a class="navbar-toggler p-1 border-0 pr-3" type="button" data-toggle="offcanvas">
         <i class="fa fa-2x fa-bars"></i>

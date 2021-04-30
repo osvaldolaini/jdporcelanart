@@ -28,7 +28,7 @@
                 @if (isset($partners))
                     @foreach ( $partners as $partner)
                     <a href="{{$partner->link}}" target="_BLANK">
-                        <img src="{{ url('storage/images/partners/'.$partner->image) }}" alt="{{$partner->slug}}">
+                        <img class="lazyload" src="{{ url('storage/images/partners/'.$partner->image) }}" alt="{{$partner->slug}}">
                     </a>
                     @endforeach
                 @endif
@@ -41,15 +41,21 @@
             <div class="section-heading-wrap text-center mb-5">
                 <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Sobre</span></h2>
                 <span class="gsap-reveal">
-                    <img class="lazyload img-fluid" src="{{ url('storage/images/site/divider_alvo_gold.png') }}"
-                        alt="divider" width="150">
+                    <picture class="lazyload img-fluid" alt="divider" width="150">
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.png') }}" />
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.webp') }}"/>
+                        <img class="lazyload img-fluid" src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150"/>
+                    </picture >
                 </span>
             </div>
             <div class="row mt-5 justify-content-between">
                 <div class="col-lg-7 mb-5 mb-lg-0">
                     <figure class="dotted-bg gsap-reveal-img">
-                        <img class="lazyload img-fluid" src="{{ url('storage/images/site/about.jpg') }}" alt="Image"
-                            class="img-fluid">
+                        <picture class="lazyload img-fluid">
+                            <source srcset="{{ url('storage/images/site/about.jpg') }}" />
+                            <source srcset="{{ url('storage/images/site/about.webp') }}"/>
+                            <img class="lazyload img-fluid" src="{{ url('storage/images/site/about.jpg') }}" alt="{{$config->about}}"/>
+                        </picture >
                     </figure>
                 </div>
                 <div class="col-lg-4 pr-lg-5">
@@ -66,7 +72,11 @@
             <div class="section-heading-wrap text-center mb-5">
                 <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Serviços</span></h2>
                 <span class="gsap-reveal">
-                    <img src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150">
+                    <picture class="lazyload img-fluid" alt="divider" width="150">
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.png') }}" />
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.webp') }}"/>
+                        <img class="lazyload img-fluid" src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150"/>
+                    </picture >
                 </span>
             </div>
 
@@ -110,14 +120,18 @@
             <div class="section-heading-wrap text-center mb-5">
                 <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Galeria</span></h2>
                 <span class="gsap-reveal">
-                    <img src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150">
+                    <picture class="lazyload img-fluid" alt="divider" width="150">
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.png') }}" />
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.webp') }}"/>
+                        <img class="lazyload img-fluid" src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150"/>
+                    </picture >
                 </span>
             </div>
 
             <div class="row gallery-container" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-lg-4 col-md-6 gallery-item filter-app isotope-item gsap-reveal-img">
                     <div class="gallery-wrap">
-                        <img src="{{ url('storage/images/events/1/gallery-1.jpg') }}" class="img-fluid" alt="">
+                        <img src="{{ url('storage/images/events/1/gallery-1.jpg') }}" class="lazyload img-fluid" alt="">
                         <div class="gallery-info">
                             <h4>App 1</h4>
                             <p>App</p>
@@ -191,7 +205,11 @@
             <div class="section-heading-wrap text-center mb-5">
                 <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Artigos em destaque</span></h2>
                 <span class="gsap-reveal">
-                    <img src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150">
+                    <picture class="lazyload img-fluid" alt="divider" width="150">
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.png') }}" />
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.webp') }}"/>
+                        <img class="lazyload img-fluid" src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150"/>
+                    </picture >
                 </span>
             </div>
 
@@ -204,7 +222,7 @@
                                 <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
                             </div>
                         </div>
-                        <img src="{{ url('storage/images/articles/1/post_1.jpg') }}" class="lazyload" alt="Image" />
+                        <img src="{{ url('storage/images/articles/1/post_1.jpg') }}" class="lazyload img-fluid" alt="Image" />
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
@@ -215,7 +233,7 @@
                                 <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
                             </div>
                         </div>
-                        <img src="{{ url('storage/images/articles/1/post_2.jpg') }}" class="lazyload" alt="Image" />
+                        <img src="{{ url('storage/images/articles/1/post_2.jpg') }}" class="lazyload img-fluid" alt="Image" />
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
@@ -226,7 +244,7 @@
                                 <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
                             </div>
                         </div>
-                        <img src="{{ url('storage/images/articles/1/post_3.jpg') }}" class="lazyload" alt="Image" />
+                        <img src="{{ url('storage/images/articles/1/post_3.jpg') }}" class="lazyload img-fluid" alt="Image" />
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
@@ -237,7 +255,7 @@
                                 <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
                             </div>
                         </div>
-                        <img src="{{ url('storage/images/articles/1/post_4.jpg') }}" class="lazyload" alt="Image" />
+                        <img src="{{ url('storage/images/articles/1/post_4.jpg') }}" class="lazyload img-fluid" alt="Image" />
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="200">
@@ -248,7 +266,7 @@
                                 <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
                             </div>
                         </div>
-                        <img src="{{ url('storage/images/articles/1/post_5.jpg') }}" class="lazyload" alt="Image" />
+                        <img src="{{ url('storage/images/articles/1/post_5.jpg') }}" class="lazyload img-fluid" alt="Image" />
                     </a>
                 </div>
             </div>
@@ -294,15 +312,18 @@
             <div class="section-heading-wrap text-center mb-5">
                 <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Cursos</span></h2>
                 <span class="gsap-reveal">
-                    <img src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150">
+                    <picture class="lazyload img-fluid" alt="divider" width="150">
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.png') }}" />
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.webp') }}"/>
+                        <img class="lazyload img-fluid" src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150"/>
+                    </picture >
                 </span>
             </div>
 
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 gsap-reveal">
-                        <a href="#" class="main-property"
-                            style="background-image: url({{ url('storage/images/events/2/curso_1.jpg') }});">
+                        <a href="#" class="main-property" style="background-image: url({{ url('storage/images/events/2/curso_1.jpg') }});">
                             <span class="status">Duração 10h</span>
                             <div class="prop-details">
                                 <span class="price">Valor sob consulta</span>
@@ -343,7 +364,11 @@
             <div class="section-heading-wrap text-center mb-5">
                 <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Fale conosco</span></h2>
                 <span class="gsap-reveal">
-                    <img src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150">
+                    <picture class="lazyload img-fluid" alt="divider" width="150">
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.png') }}" />
+                        <source srcset="{{ url('storage/images/site/divider_alvo_gold.webp') }}"/>
+                        <img class="lazyload img-fluid" src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150"/>
+                    </picture >
                 </span>
             </div>
 
