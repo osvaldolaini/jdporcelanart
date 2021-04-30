@@ -11819,7 +11819,7 @@ figure.dotted-bg:before {
 .form-outline-style .form-group .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-bottom: 1px solid #886308;
+  border-bottom: 1px solid darkgoldenrod;
 }
 
 .form-outline-style .form-group label {
@@ -11835,7 +11835,7 @@ figure.dotted-bg:before {
   background: #fff;
 }
 
-.form-outline-style .form-group.field--not-empty label {
+.form-outline-style .form-group.field-not-empty label {
   margin-top: -25px;
 }
 
@@ -11878,6 +11878,40 @@ figure.dotted-bg:before {
 .contact-info .contact-info-val {
   font-size: 20px;
   color: #fff;
+}
+
+span.error {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#message {
+  resize: vertical;
+}
+
+#form-message-warning,
+#form-message-success {
+  display: none;
+}
+
+#form-message-warning {
+  color: #f64b3c;
+}
+
+#form-message-success {
+  color: #b8860b;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.submitting {
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+  display: none;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 0.1rem;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /*********************************
@@ -11953,6 +11987,21 @@ figure.dotted-bg:before {
 .newsletter_text {
   margin-top: 14px;
   padding-left: 6px;
+}
+
+#newsletter-message-warning,
+#newsletter-message-success {
+  display: none;
+}
+
+#newsletter-message-warning {
+  color: #f64b3c;
+}
+
+#newsletter-message-success {
+  color: #b8860b;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /*********************************

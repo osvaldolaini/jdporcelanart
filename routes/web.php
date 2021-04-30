@@ -18,7 +18,8 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/', 'SiteController@index')->name('site.index');
     Route::get('/home', 'SiteController@index')->name('site.index');
 });
-
+    Route::post('/enviar-email', 'Admin\EmailController@store')->name('email.store');
+    Route::post('/newsletter', 'Admin\SubscriberController@store')->name('subscriber.store');
 Auth::routes();
 /*Rotas Painel*/
 /*Middleware RegisterLogging registra toda navegação do usuário*/

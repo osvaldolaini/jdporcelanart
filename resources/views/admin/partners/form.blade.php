@@ -100,7 +100,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <label for="nome">Imagem (ideal 400 x 200 pixels) </label>
+                        <label for="nome">Imagem (ideal 400 x 400 pixels) </label>
                         <div class="area-upload">
                             <label for="upload-file" class="label-upload">
                                 <i class="fas fa-cloud-upload-alt"></i>

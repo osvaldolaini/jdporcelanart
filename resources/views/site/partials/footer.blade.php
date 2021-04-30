@@ -27,21 +27,15 @@
                     <div class="single_footer">
                         <h4>Siga-nos nas rede sociais</h4>
                         <ul class="list-unstyled list-inline">
-                            <li class="list-inline-item">
-                                <a class="footer_icon" href="https://www.facebook.com/crosscanoas" target="_blank">
-                                    <i class="fab fa-3x fa-facebook-square"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="footer_icon" href="https://www.instagram.com/crossfit_canoas"  target="_blank">
-                                    <i class="fab fa-3x fa-instagram-square"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="footer_icon" href="https://www.youtube.com/channel/UC9sWQoZ0Ww6phxnRoSGYmPQ"  target="_blank">
-                                    <i class="fab fa-3x fa-youtube-square"></i>
-                                </a>
-                            </li>
+                            @if (isset($socialMedias))
+                                @foreach ($socialMedias as $socialMedia)
+                                    <li class="list-inline-item">
+                                        <a class="footer_icon" href="https://www.instagram.com/{{$socialMedia->link}}" target="_blank">
+                                            <i class="fab fa-3x {{$socialMedia->icon}}"></i>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
                 </div>

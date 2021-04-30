@@ -24,6 +24,7 @@ mix.scripts('resources/views/admin/template/js/main_admin.js','public/admin/js/m
 .scripts('resources/views/admin/template/validate/app_validate.js','public/admin/template/validate/app_validate.js')
 .scripts('resources/views/admin/template/js/app_emails.js','public/admin/js/app_emails.js')
 .scripts('resources/views/admin/template/highchart/app_charts.js','public/admin/template/highchart/app_charts.js')
+.scripts('resources/views/admin/template/js/app_views.js','public/admin/js/app_views.js')
 .sass('resources/views/admin/template/upload/scss/uploads.scss', 'public/admin/template/upload/uploads.css')
 .sass('resources/views/admin/template/switch/scss/switch.scss', 'public/admin/template/switch/switch.css')
 .sass('resources/views/admin/template/validate/scss/validate.scss', 'public/admin/template/validate/css/validate.css')

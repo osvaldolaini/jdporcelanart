@@ -45,7 +45,7 @@ class HomeController extends Controller
         $newEmail       = Email::where('active', 1)->count();
 
         $pag = array();
-        $p=0;
+        $p=array();
         $pages = View::select('page')->groupBy('page')->get();
         foreach ($pages as $key) {
             $link = '';

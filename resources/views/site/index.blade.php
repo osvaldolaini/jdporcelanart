@@ -25,14 +25,13 @@
     <section id="partners" class="section partners">
         <div class="container" data-aos="zoom-in">
             <div class="owl-carousel partners-carousel">
-                <img src="{{ url('storage/images/partners/client-1.png') }}" alt="">
-                <img src="{{ url('storage/images/partners/client-2.png') }}" alt="">
-                <img src="{{ url('storage/images/partners/client-3.png') }}" alt="">
-                <img src="{{ url('storage/images/partners/client-4.png') }}" alt="">
-                <img src="{{ url('storage/images/partners/client-5.png') }}" alt="">
-                <img src="{{ url('storage/images/partners/client-6.png') }}" alt="">
-                <img src="{{ url('storage/images/partners/client-7.png') }}" alt="">
-                <img src="{{ url('storage/images/partners/client-8.png') }}" alt="">
+                @if (isset($partners))
+                    @foreach ( $partners as $partner)
+                    <a href="{{$partner->link}}" target="_BLANK">
+                        <img src="{{ url('storage/images/partners/'.$partner->image) }}" alt="{{$partner->slug}}">
+                    </a>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section><!-- End Partners Section -->
@@ -54,13 +53,9 @@
                     </figure>
                 </div>
                 <div class="col-lg-4 pr-lg-5">
-                    <h3 class="mb-4 heading-h3"><span class="gsap-reveal">We can make it together</span></h3>
-                    <p class="lead gsap-reveal">Far far away, behind the word mountains, far from the countries Vokalia and
-                        Consonantia, there <a href="#">live the blind</a> texts. </p>
-                    <p class="mb-4 gsap-reveal">A small river named Duden flows by their place and supplies it with the
-                        necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into
-                        your mouth.</p>
-                    <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Saiba mais...</a></p>
+                    <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Nossa história</span></h3>
+                        {!!$config->about!!}
+                    <p class="gsap-reveal"><a href="{{url('sobre')}}" class="btn btn-outline-pill btn-custom-light">Saiba mais...</a></p>
                 </div>
             </div>
         </div>
@@ -271,8 +266,7 @@
                             <p>Inscreva-se para receber todas essas informações.</p>
                             <div class="newsletter" id="newsletter">
                                 <div class="newsletter_form_container">
-                                    <form class="form-alterar" action="{{ url('/receber-noticias') }}" method="post"
-                                        accept-charset="utf-8" enctype="multipart/form-data">
+                                    <form method="post" class="form-outline-style" id="newsletterForm" >
                                         <div class="d-flex flex-row align-items-start justify-content-start">
                                             <input type="email" class="newsletter_input" name="email"
                                                 placeholder="Insira seu email" required="required">
@@ -281,6 +275,10 @@
                                             </button>
                                         </div>
                                     </form>
+                                    <div id="newsletter-message-warning" class="mt-4"></div>
+                                    <div id="newsletter-message-success">
+                                        <p>Assinatura concluída, obrigado!</p>
+                                    </div>
                                 </div>
                             </div>
                     </div>
@@ -299,6 +297,7 @@
                     <img src="{{ url('storage/images/site/divider_alvo_gold.png') }}" alt="divider" width="150">
                 </span>
             </div>
+
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 gsap-reveal">
@@ -350,9 +349,8 @@
 
             <div class="row justify-content-between">
                 <div class="col-md-6">
-                    <form method="post" class="form-outline-style" id="contactForm">
+                    <form method="post" class="form-outline-style" id="contactForm" >
                         <div class="form-group row mb-0">
-
                             <div class="col-lg-6 form-group gsap-reveal">
                                 <label for="name">Name</label>
                                 <input name="name" type="text" class="form-control" id="name">
@@ -372,6 +370,11 @@
                             </div>
                         </div>
                     </form>
+                    <div id="form-message-warning" class="mt-4"></div>
+                    <div id="form-message-success">
+                        <p>Sua mensagem foi enviada, obrigado!</p>
+                        <p>Em alguns dias nossa equipe entrará em contato.</p>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <div class="contact-info">
