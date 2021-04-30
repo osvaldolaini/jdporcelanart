@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="app_url" content="{{url('')}}">
     <meta name="grecaptcha-key" content="{{config('recaptcha.v3.public_key')}}">
-
+    <meta name="robots" content="none" />
     {{-- Custom Meta Tags --}}
     @yield('meta_tags')
 
