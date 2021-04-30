@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'Site'], function () {
     Route::get('/', 'SiteController@index')->name('site.index');
     Route::get('/home', 'SiteController@index')->name('site.index');
+    Route::get('/sobre', 'SiteController@about')->name('site.about');
+    Route::get('/servicos', 'SiteController@services')->name('site.services');
+    Route::get('/nossos-cursos', 'SiteController@courses')->name('site.courses');
+    Route::get('/artigos', 'SiteController@articles')->name('site.articles');
+    Route::get('/contato', 'SiteController@contact')->name('site.contact');
 });
     Route::post('/enviar-email', 'Admin\EmailController@store')->name('email.store');
     Route::post('/newsletter', 'Admin\SubscriberController@store')->name('subscriber.store');

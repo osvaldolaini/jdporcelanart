@@ -2,7 +2,7 @@
     "/admin/template/upload/uploads.css": "/admin/template/upload/uploads.css?id=c09a7e6b450fe98b0d40",
     "/admin/template/switch/switch.css": "/admin/template/switch/switch.css?id=a689aef3c2a4c71930cf",
     "/admin/template/validate/css/validate.css": "/admin/template/validate/css/validate.css?id=623a8da046e8dfb6776d",
-    "/site/assets/css/newstyle.css": "/site/assets/css/newstyle.css?id=949b2dc68188ebe695f2",
+    "/site/assets/css/newstyle.css": "/site/assets/css/newstyle.css?id=ce14971bde4d00872503",
     "/admin/js/main_admin.js": "/admin/js/main_admin.js?id=e62ba8cc6d850b4fd83b",
     "/admin/js/app_crud.js": "/admin/js/app_crud.js?id=96afe1e866d487e3526e",
     "/admin/js/jquery.mask.min.js": "/admin/js/jquery.mask.min.js?id=f36c7a06f384548ea227",
@@ -27,7 +27,7 @@
     "/admin/template/switch/switch.min.css": "/admin/template/switch/switch.min.css?id=a689aef3c2a4c71930cf",
     "/admin/template/upload/uploads.min.css": "/admin/template/upload/uploads.min.css?id=c09a7e6b450fe98b0d40",
     "/admin/template/validate/css/validate.min.css": "/admin/template/validate/css/validate.min.css?id=623a8da046e8dfb6776d",
-    "/site/assets/js/app_site.js": "/site/assets/js/app_site.js?id=ebbedd90fc3872e6b54d",
-    "/site/assets/css/newstyle.min.css": "/site/assets/css/newstyle.min.css?id=949b2dc68188ebe695f2",
-    "/site/assets/js/app_site.min.js": "/site/assets/js/app_site.min.js?id=ebbedd90fc3872e6b54d"
+    "/site/assets/js/app_site.js": "/site/assets/js/app_site.js?id=0bd0091f2636b70b66ca",
+    "/site/assets/css/newstyle.min.css": "/site/assets/css/newstyle.min.css?id=ce14971bde4d00872503",
+    "/site/assets/js/app_site.min.js": "/site/assets/js/app_site.min.js?id=0bd0091f2636b70b66ca"
 }

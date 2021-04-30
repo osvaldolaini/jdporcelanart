@@ -362,7 +362,7 @@ var App = function () {
             jarallaxPlugin()
             carousel()
             animateReveal()
-            siteIstotope()
+            //siteIstotope()
             gallery()
             contactForm()
             newsletterForm()

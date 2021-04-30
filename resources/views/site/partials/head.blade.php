@@ -19,13 +19,13 @@
       <div class="collapse navbar-collapse mt-0 pt-0">
             <div class="navbar-nav " id="main-nav">
                 <li class="has-children">
-                  <a href="{{url('')}}" class="nav-link active">HOME</a>
+                  <a href="{{url('')}}" class="nav-link {{ Request::is('') ? 'active' : null }}">HOME</a>
                 </li>
                 <li class="has-children">
-                  <a href="{{url('sobre')}}" class="nav-link">SOBRE</a>
+                  <a href="{{url('sobre')}}" class="nav-link {{ Request::is('sobre*') ? 'active' : null }}">SOBRE</a>
                 </li>
                 <li class="has-children">
-                  <a href="{{url('servicos')}}" class="nav-link">SERVIÇOS</a>
+                  <a href="{{url('servicos')}}" class="nav-link {{ Request::is('servicos*') ? 'active' : null }}">SERVIÇOS</a>
                 </li>
                   <a href="{{url('')}}" class="logo">
                     <picture class="lazyload img-fluid">
@@ -35,13 +35,13 @@
                     </picture>
                   </a>
                 <li class="has-children">
-                  <a href="{{url('cursos')}}" class="nav-link">CURSOS</a>
+                  <a href="{{url('nossos-cursos')}}" class="nav-link {{ Request::is('nossos-cursos*') ? 'active' : null }}">CURSOS</a>
                 </li>
                 <li class="has-children">
-                  <a href="{{url('artigo')}}" class="nav-link">ARTIGOS</a>
+                  <a href="{{url('artigos')}}" class="nav-link {{ Request::is('artigos*') ? 'active' : null }}">ARTIGOS</a>
                 </li>
                 <li class="has-children">
-                  <a href="{{url('contato')}}" class="nav-link">CONTATO</a>
+                  <a href="{{url('contato')}}" class="nav-link {{ Request::is('contato*') ? 'active' : null }}">CONTATO</a>
                 </li>
             </div>
         </div>
@@ -61,22 +61,22 @@
       <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault" style="background-image: url({{url('storage/images/site/bg.jpg')}});">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{{url('')}}"><i class="fas fa-crosshairs"></i> HOME <span class="sr-only">(current)</span></a>
+            <a class="nav-link {{ Request::is('') ? 'active' : null }}" href="{{url('')}}"><i class="fas fa-crosshairs"></i> HOME <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url('sobre')}}"><i class="fas fa-2x fa-crosshairs"></i> SOBRE</a>
+            <a class="nav-link {{ Request::is('sobre*') ? 'active' : null }}" href="{{url('sobre')}}"><i class="fas fa-2x fa-crosshairs"></i> SOBRE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url('servicos')}}"><i class="fas fa-2x fa-crosshairs"></i> SERVIÇOS</a>
+            <a class="nav-link {{ Request::is('servicos*') ? 'active' : null }}" href="{{url('servicos')}}"><i class="fas fa-2x fa-crosshairs"></i> SERVIÇOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url('cursos')}}"><i class="fas fa-2x fa-crosshairs"></i> CURSOS</a>
+            <a class="nav-link {{ Request::is('nossos-cursos*') ? 'active' : null }}" href="{{url('nossos-cursos')}}"><i class="fas fa-2x fa-crosshairs"></i> CURSOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url('artigos')}}"><i class="fas fa-2x fa-crosshairs"></i> ARTIGOS</a>
+            <a class="nav-link {{ Request::is('artigos*') ? 'active' : null }}" href="{{url('artigos')}}"><i class="fas fa-2x fa-crosshairs"></i> ARTIGOS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url('contato')}}"> <i class="fas fa-2x fa-crosshairs"></i> CONTATO</a>
+            <a class="nav-link {{ Request::is('contato*') ? 'active' : null }}" href="{{url('contato')}}"> <i class="fas fa-2x fa-crosshairs"></i> CONTATO</a>
           </li>
         </ul>
       </div>

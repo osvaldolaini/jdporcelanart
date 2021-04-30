@@ -11333,6 +11333,11 @@ Linhas
   position: relative;
 }
 
+figure {
+  border-top: solid 1px #b8860b;
+  border-bottom: solid 1px #b8860b;
+}
+
 figure.dotted-bg {
   position: relative;
 }

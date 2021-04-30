@@ -24,4 +24,64 @@ class SiteController extends Controller
             'socialMedias' =>  $socialMedias,
         ]);
     }
+    public function about ()
+    {
+        $partners = Partner::where('active',1)->get();
+        $socialMedias = SocialMedia::where('active',1)->get();
+        $config = Config::get()->first();
+        return view('site.about',[
+            'title_postfix' => 'Sobre',
+            'config' =>  $config,
+            'partners' =>  $partners,
+            'socialMedias' =>  $socialMedias,
+        ]);
+    }
+    public function services ()
+    {
+        $partners = Partner::where('active',1)->get();
+        $socialMedias = SocialMedia::where('active',1)->get();
+        $config = Config::get()->first();
+        return view('site.services',[
+            'title_postfix' => 'Serviços',
+            'config' =>  $config,
+            'partners' =>  $partners,
+            'socialMedias' =>  $socialMedias,
+        ]);
+    }
+    public function articles ()
+    {
+        $partners = Partner::where('active',1)->get();
+        $socialMedias = SocialMedia::where('active',1)->get();
+        $config = Config::get()->first();
+        return view('site.articles',[
+            'title_postfix' => 'Artigos',
+            'config' =>  $config,
+            'partners' =>  $partners,
+            'socialMedias' =>  $socialMedias,
+        ]);
+    }
+    public function courses ()
+    {
+        $partners = Partner::where('active',1)->get();
+        $socialMedias = SocialMedia::where('active',1)->get();
+        $config = Config::get()->first();
+        return view('site.courses',[
+            'title_postfix' => 'Cursos',
+            'config' =>  $config,
+            'partners' =>  $partners,
+            'socialMedias' =>  $socialMedias,
+        ]);
+    }
+    public function contact ()
+    {
+        $partners = Partner::where('active',1)->get();
+        $socialMedias = SocialMedia::where('active',1)->get();
+        $config = Config::get()->first();
+        return view('site.contacts',[
+            'title_postfix' => 'Contatos',
+            'config' =>  $config,
+            'partners' =>  $partners,
+            'socialMedias' =>  $socialMedias,
+        ]);
+    }
 }

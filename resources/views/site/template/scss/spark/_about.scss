@@ -41,6 +41,9 @@
 }
 
 figure{
+
+  border-top: solid 1px $spark-color-primary;
+  border-bottom: solid 1px $spark-color-primary;
 	&.dotted-bg {
 		position: relative;
 		&:before {

@@ -11,7 +11,9 @@
     <link rel="preload" href="{{ asset('site/template/vendor/venobox/venobox.css') }}" as="style" />
     <link rel="stylesheet" href="{{ asset('site/template/vendor/venobox/venobox.css') }}" />
 
-    <link href="{{asset('site/assets/css/newstyle.min.css')}}" rel="stylesheet">
+    <link rel="preload" href="{{asset('site/assets/css/newstyle.min.css')}}" as="style" />
+    <link rel="stylesheet" href="{{asset('site/assets/css/newstyle.min.css')}}" />
 
     {{--Laini Ads--}}
-    <link href="{{asset('site/ads/css/ads.min.css')}}" rel="stylesheet">
+    <link rel="preload" href="{{asset('site/ads/css/ads.min.css')}}" as="style" />
+    <link rel="stylesheet" href="{{asset('site/ads/css/ads.min.css')}}" />
