@@ -45,9 +45,9 @@ var App_ads = function () {
                             '</a>'+
                         '</div>'+
                     '</div>')
-                    //console.log(response.success)
+                    console.log(response.success)
                 }else{
-                    console.log(response.error)
+                    console.log(response.success)
                 }
               },
           })
@@ -73,10 +73,12 @@ var App_ads = function () {
                                 '</div>'+
                             '</a>'+
                         '</div>')
-                        //console.log(response.success)
+                        console.log(response.success)
                     }else{
-                        console.log(response.error)
+                        console.log(response.success)
                     }
+
+
               },
           })
     }
@@ -96,8 +98,8 @@ var App_ads = function () {
           $(".adsSmall").each(function () {
             cont += Number(1)
             /*inseri ID nas divs para diferenciar */
-            $(this).attr('id','adsSmall_'+cont)
-            small('adsSmall_'+cont)
+            $(this).attr('id','adsSmall'+cont)
+            small('adsSmall'+cont)
           });
       })
     }
@@ -119,10 +121,10 @@ var App_ads = function () {
               data:{id:id,table:table,page:page,ua:ua,plataforma:plataforma},
               method:'POST',
               success:function(response){
-                //console.log(response)
+                console.log(response)
               },
               error:function(response){
-                //console.log(response)
+                console.log(response)
               }
           })
       })
@@ -140,10 +142,10 @@ var App_ads = function () {
               data:{id:id,table:table,page:page,ua:ua,plataforma:plataforma},
               method:'POST',
               success:function(response){
-                //console.log(response)
+                console.log(response)
               },
               error:function(response){
-                //console.log(response)
+                console.log(response)
               }
           })
       })
@@ -162,19 +164,3 @@ var App_ads = function () {
 jQuery(document).ready(function(){
   App_ads.init();
 });
-
-(function($) {
-    "use strict";
-    // // Clients carousel (uses Init AOS)
-    function aos_init() {
-      AOS.init({
-        duration: 1000,
-        easing: "ease-in-out",
-        once: true,
-        mirror: false
-      });
-    }
-    $(window).on('load', function() {
-      aos_init();
-    });
-  })(jQuery);

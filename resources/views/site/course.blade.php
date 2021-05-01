@@ -53,21 +53,23 @@
               </div>
               <div class="col-lg-12">
                 <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-12">
-                    <div class="status">
-                        <span class="detail-label">Nome: </span>
-                        <span class="detail-val">{{$course->title}}</span>
+                    <div class="col-sm-6 col-md-6 col-lg-8">
+                        <div class="status">
+                            <span class="detail-label">Nome: </span>
+                            <span class="detail-val">{{$course->title}}</span>
+                        </div>
+                        <div class="status">
+                            <span class="detail-label">Duração: </span>
+                            <span class="detail-val">{{$course->duraction}}</span>
+                        </div>
+                        <div class="status">
+                            <span class="detail-label">Descrição: </span>
+                            <span class="detail-val text-white text-justify">{!!$course->text!!}</span>
+                        </div>
                     </div>
-                    <div class="status">
-                        <span class="detail-label">Duração: </span>
-                        <span class="detail-val">{{$course->duraction}}</span>
+                    <div class="col-sm-12 col-md-12 col-lg-4 ads">
+                        <div class="adsSmall"></div>
                     </div>
-                    <div class="status">
-                        <span class="detail-label">Descrição: </span>
-                        <span class="detail-val text-white">{!!$course->text!!}</span>
-                    </div>
-                  </div>
-                 
                 </div>
               </div>
             </div>
