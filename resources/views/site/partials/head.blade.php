@@ -21,7 +21,7 @@
                     </picture>
         </div>
     </main>
-
+ 
   <!--Nav bar large-->
   <nav class="navbar navbar-expand-md fixed-top nav-spark mt-0 pt-0" >
       <div class="collapse navbar-collapse mt-0 pt-0">
@@ -63,8 +63,8 @@
             <img class="lazyload img-fluid" src="{{url('storage/images/site/logo_small_text.png')}}" />
         </picture >
       </a>
-      <a class="navbar-toggler p-1 border-0 pr-3" type="button" data-toggle="offcanvas">
-        <i class="fa fa-2x fa-bars"></i>
+      <a class="navbar-toggler p-1 pr-3" data-toggle="offcanvas">
+          <i class="fa fa-2x fa-bars"></i>
       </a>
       <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault" style="background-image: url({{url('storage/images/site/bg.jpg')}});">
         <ul class="navbar-nav ml-auto">

@@ -83,7 +83,6 @@ class SiteController extends Controller
     }
     public function article ($any)
     {
-        
         $article = Article::where('slug',$any)->first();
         $socialMedias = SocialMedia::where('active',1)->get();
         $config = Config::get()->first();
@@ -91,7 +90,10 @@ class SiteController extends Controller
         ->orderBy('clicks','desc')
         ->orderBy('created_at','desc')
         ->limit(4)->get();
-        
+            //Visualizacoes
+            $article->clicks = $article->clicks + 1;
+            $article->save();
+            //Visualizacoes
         return view('site.article',[
             'title_postfix' => 'Artigo',
             'config' =>  $config,
@@ -115,12 +117,14 @@ class SiteController extends Controller
     }
     public function course ($any)
     {
-        
         $course = Course::where('slug',$any)->first();
         $socialMedias = SocialMedia::where('active',1)->get();
         $config = Config::get()->first();
         $courses = Course::where('active',1)->limit(3)->get();
-        
+            //Visualizacoes
+            $course->clicks = $course->clicks + 1;
+            $course->save();
+            //Visualizacoes
         return view('site.course',[
             'title_postfix' => 'Cursos',
             'config' =>  $config,
