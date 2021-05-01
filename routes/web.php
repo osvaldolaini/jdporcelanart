@@ -22,6 +22,7 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/nossos-cursos', 'SiteController@courses')->name('site.courses');
     Route::get('/nossos-cursos/{any}', 'SiteController@course')->name('site.course');
     Route::get('/artigos', 'SiteController@articles')->name('site.articles');
+    Route::get('/artigos/{any}', 'SiteController@article')->name('site.article');
     Route::get('/contato', 'SiteController@contact')->name('site.contact');
 });
     Route::post('/enviar-email', 'Admin\EmailController@store')->name('email.store');

@@ -33,8 +33,7 @@
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
-                    @if (isset($articles))
-                        @foreach($articles as $article)
+                    @if (isset($article))
                             <article class="blog_item">
                                 <div class="blog_item_img">
                                     @foreach ($article->images as $images)
@@ -59,62 +58,15 @@
                                                 {{$article->title}}
                                             </a> 
                                         </h2>
-                                        @php
-                                           $resultado = explode('</p>', $article->text);
-                                        @endphp
-                                        {!!$resultado[0]!!}
+                            
+                                        {!!$article->text!!}
                                     <ul class="blog-info-link">
                                         <li><a href="#"><i class="far fa-user"></i> {{$article->created_by}}</a></li>
                                         <li><a href="#"><i class="fas fa-calendar-alt"></i>  {{($article->created_at ? date( 'd/m/Y H:i' , strtotime($article->created_at)) : "")}}</a></li>
                                     </ul>
-                                     <p class="gsap-reveal"><a href="{{url('artigos/'.$article->slug)}}" class="btn btn-outline-pill btn-custom-light">Leia mais...</a></p>
                                 </div>
                             </article>
-                        @endforeach
                     @endif
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="img/blog/single_blog_1.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="single-blog.html">
-                                    <h2>Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is
-                                    that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-
-                        <nav class="blog-pagination justify-content-center d-flex">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Previous">
-                                        <i class="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">1</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Next">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
                 <div class="col-lg-4">

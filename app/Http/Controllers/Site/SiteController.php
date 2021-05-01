@@ -68,11 +68,35 @@ class SiteController extends Controller
     {
         $articles = Article::where('active',1)->get();
         $socialMedias = SocialMedia::where('active',1)->get();
+        $trendTopics = Article::where('active',1)
+        ->orderBy('clicks','desc')
+        ->orderBy('created_at','desc')
+        ->limit(4)->get();
         $config = Config::get()->first();
         return view('site.articles',[
             'title_postfix' => 'Artigos',
+            'config'        =>  $config,
+            'articles'      =>  $articles,
+            'trendTopics'   =>  $trendTopics,
+            'socialMedias'  =>  $socialMedias,
+        ]);
+    }
+    public function article ($any)
+    {
+        
+        $article = Article::where('slug',$any)->first();
+        $socialMedias = SocialMedia::where('active',1)->get();
+        $config = Config::get()->first();
+        $trendTopics = Article::where('active',1)
+        ->orderBy('clicks','desc')
+        ->orderBy('created_at','desc')
+        ->limit(4)->get();
+        
+        return view('site.article',[
+            'title_postfix' => 'Artigo',
             'config' =>  $config,
-            'articles' =>  $articles,
+            'article' =>  $article,
+            'trendTopics' =>  $trendTopics,
             'socialMedias' =>  $socialMedias,
         ]);
     }
