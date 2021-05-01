@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Model\Admin\Article;
 use Illuminate\Http\Request;
 use App\Model\Admin\Config;
 use App\Model\Admin\ConfigAddress;
@@ -16,11 +17,13 @@ class SiteController extends Controller
     {
         $partners = Partner::where('active',1)->get();
         $socialMedias = SocialMedia::where('active',1)->get();
+        $articles = Article::where('active',1)->limit(4)->get();
         $config = Config::get()->first();
         return view('site.index',[
             'title_postfix' => '',
             'config' =>  $config,
             'partners' =>  $partners,
+            'articles' =>  $articles,
             'socialMedias' =>  $socialMedias,
         ]);
     }

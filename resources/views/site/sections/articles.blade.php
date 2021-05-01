@@ -13,61 +13,48 @@
             </div>
 
             <div class="row blog align-items-stretch">
-                <div class="col-sm-6 col-md-6 col-lg-8 blog-post-entry " data-aos="fade-up" data-aos-delay="0">
-                    <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                        <div class="overlay">
-                            <div class="blog-item-content">
-                                <h3>A Mounteering Guide For Beginners</h3>
-                                <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                            </div>
+                @if (isset($articles))
+                @php $id = 0; @endphp
+                    @foreach ($articles as $article)
+                    @php $id += 1; 
+                       switch ($id) {
+                           case 1:
+                               $col = 'col-lg-8';
+                               break;
+                            case 4:
+                               $col = 'col-lg-8';
+                               break;
+                           default:
+                                $col = 'col-lg-4';
+                               break;
+                       }
+                    @endphp
+                        <div class="col-sm-6 col-md-6 {{$col}} blog-post-entry " data-aos="fade-up" data-aos-delay="0">
+                            <a href="{{url('artigos/'.$article->slug)}}" class="grid-item blog-item w-100 h-100">
+                                <div class="overlay">
+                                    <div class="blog-item-content">
+                                        <h3>{{$article->title}}</h3>
+                                        <p class="post-meta">{{$article->created_by}} <span class="small">&bullet;</span> {{($article->created_at ? date( 'd/m/Y H:i' , strtotime($article->created_at)) : "")}}</p>
+                                    </div>
+                                </div>
+                                @foreach ($article->images as $images)
+                                    @if($images->featured == '1')
+                                       @php 
+                                            $img = 'storage/'.$images->path.'/'.$images->title; 
+                                            $alt = $images->title;
+                                       @endphp
+                                    @endif
+                                @endforeach
+                                <img src="{{ url($img) }}" class="lazyload img-fluid" alt="{{$alt}}" />
+                            </a>
                         </div>
-                        <img src="{{ url('storage/images/articles/1/post_1.jpg') }}" class="lazyload img-fluid" alt="Image" />
-                    </a>
+                    @endforeach
+                @endif
+
+                <div class="col-lg-12 text-center pt-3">
+                    <p class="gsap-reveal"><a href="{{url('artigos')}}" class="btn btn-outline-pill btn-custom-light">Leia mais...</a></p>
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
-                    <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                        <div class="overlay">
-                            <div class="blog-item-content">
-                                <h3>A Mounteering Guide For Beginners</h3>
-                                <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                            </div>
-                        </div>
-                        <img src="{{ url('storage/images/articles/1/post_2.jpg') }}" class="lazyload img-fluid" alt="Image" />
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
-                    <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                        <div class="overlay">
-                            <div class="blog-item-content">
-                                <h3>A Mounteering Guide For Beginners</h3>
-                                <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                            </div>
-                        </div>
-                        <img src="{{ url('storage/images/articles/1/post_3.jpg') }}" class="lazyload img-fluid" alt="Image" />
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
-                    <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                        <div class="overlay">
-                            <div class="blog-item-content">
-                                <h3>A Mounteering Guide For Beginners</h3>
-                                <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                            </div>
-                        </div>
-                        <img src="{{ url('storage/images/articles/1/post_4.jpg') }}" class="lazyload img-fluid" alt="Image" />
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="200">
-                    <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                        <div class="overlay">
-                            <div class="blog-item-content">
-                                <h3>A Mounteering Guide For Beginners</h3>
-                                <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                            </div>
-                        </div>
-                        <img src="{{ url('storage/images/articles/1/post_5.jpg') }}" class="lazyload img-fluid" alt="Image" />
-                    </a>
-                </div>
+
             </div>
         </div>
     </section><!-- End Article Section -->

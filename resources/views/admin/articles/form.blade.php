@@ -82,7 +82,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <label for="files">Imagens</label>
+                        <label for="files">Imagens (720 x 405)</label>
                         <div class="area-upload">
                             <label for="upload-file" class="label-upload">
                                 <i class="fas fa-cloud-upload-alt"></i>

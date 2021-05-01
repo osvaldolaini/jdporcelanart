@@ -9,8 +9,16 @@
 <!-- Preloader -->
     <main id="main" >
         <div id="preloader" class="preloader">
-            <img src="{{url('storage/images/site/preloader-fixo.png')}}" id="preloader-fixo">
-            <img src="{{url('storage/images/site/preloader-spinner.png')}}" id="preloader-spinner">
+            <picture class="lazyload img-fluid">
+                        <source srcset="{{url('storage/images/site/preloader-fixo.png')}}" />
+                        <source srcset="{{url('storage/images/site/preloader-fixo.webp')}}"/>
+                        <img class="lazyload img-fluid"  src="{{url('storage/images/site/preloader-fixo.png')}}" id="preloader-fixo"/>
+                    </picture>
+                    <picture class="lazyload img-fluid">
+                        <source srcset="{{url('storage/images/site/preloader-spinner.png')}}" />
+                        <source srcset="{{url('storage/images/site/preloader-spinner.webp')}}"/>
+                        <img class="lazyload img-fluid" src="{{url('storage/images/site/preloader-spinner.png')}}" id="preloader-spinner"/>
+                    </picture>
         </div>
     </main>
 

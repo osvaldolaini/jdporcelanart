@@ -47,6 +47,9 @@
     {{-- Services --}}
     @include('site.sections.services')
 
+    {{-- Courses --}}
+    @include('site.sections.courses')
+
     <!-- ======= Gallery Section ======= -->
     <section class="section gallery" id="gallery">
         <div class="container">
@@ -64,15 +67,13 @@
             <div class="row gallery-container" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-lg-4 col-md-6 gallery-item filter-app isotope-item gsap-reveal-img">
                     <div class="gallery-wrap">
-                        <img src="{{ url('storage/images/events/1/gallery-1.jpg') }}" class="lazyload img-fluid" alt="">
+                        <img alt="teste" src="{{ url('storage/images/events/1/gallery-1.jpg') }}" data-src="{{ url('storage/images/events/1/gallery-1.jpg') }}" class="lazyload img-fluid" />
                         <div class="gallery-info">
                             <h4>App 1</h4>
                             <p>App</p>
                             <div class="gallery-links">
                                 <a href="{{ url('storage/images/events/1/gallery-1.jpg') }}" data-gall="galleryGallery"
                                     class="venobox" title="Web 3"><i class="fas fa-fw fa-search"></i></a>
-                                <a href="gallery-details.html" title="More Details"><i
-                                        class="lazyload fas fa-fw fa-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -87,7 +88,6 @@
                             <div class="gallery-links">
                                 <a href="{{ url('storage/images/events/1/gallery-2.jpg') }}" data-gall="galleryGallery"
                                     class="venobox" title="Web 3"><i class="fas fa-fw fa-search"></i></a>
-                                <a href="gallery-details.html" title="More Details"><i class="fas fa-fw fa-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                             <div class="gallery-links">
                                 <a href="{{ url('storage/images/events/1/gallery-3.jpg') }}" data-gall="galleryGallery"
                                     class="venobox" title="Web 3"><i class="fas fa-fw fa-search"></i></a>
-                                <a href="gallery-details.html" title="More Details"><i class="fas fa-fw fa-link"></i></a>
+
                             </div>
                         </div>
                     </div>
@@ -117,7 +117,6 @@
                             <div class="gallery-links">
                                 <a href="{{ url('storage/images/events/1/gallery-4.jpg') }}" data-gall="galleryGallery"
                                     class="venobox" title="Web 3"><i class="fas fa-fw fa-search"></i></a>
-                                <a href="gallery-details.html" title="More Details"><i class="fas fa-fw fa-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -137,9 +136,6 @@
 
     {{-- Newslatter --}}
     @include('site.sections.newsletter')
-
-    {{-- Courses --}}
-    @include('site.sections.courses')
 
     {{-- Contact --}}
     @include('site.sections.contact')
