@@ -355,6 +355,34 @@ var App = function () {
             } );
         }
     }
+    var owlSingleSlider = function () {
+      if ( $( '.single-slider' ).length ) {
+        $('.single-slider').owlCarousel({
+          center: false,
+          items: 1,
+          loop: true,
+          stagePadding: 0,
+          margin: 0,
+          smartSpeed: 1500,
+          autoplay: true,
+          autoplayHoverPause: true,
+          dots: true,
+          nav: true,
+          navText: ['<span class="icon-keyboard_arrow_left">', '<span class="icon-keyboard_arrow_right">'],
+
+          responsive:{
+            400:{
+              stagePadding: 0,
+              margin: 0,
+            },
+            600:{
+              stagePadding: 0,
+              margin: 0,
+            }
+          }
+        });
+      }
+    }
     return{
         init: function(){
             scrollWindow()
@@ -366,6 +394,7 @@ var App = function () {
             gallery()
             contactForm()
             newsletterForm()
+            owlSingleSlider()
         }
     }
 }();

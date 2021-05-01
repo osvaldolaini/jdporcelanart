@@ -4,57 +4,57 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helpers\Functions;
 use App\Http\Controllers\Controller;
-use App\Model\Admin\Event;
-use App\Model\Admin\EventImage;
+use App\Model\Admin\Course;
+use App\Model\Admin\CourseImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
-class EventController extends Controller
-{
+class CourseController extends Controller
+{ 
     //navegação
-    private $navigation = array('title'=>'Evento','link'=>'event.index');
-    private $new_navigation = array('title'=>'Novo evento ','link'=>'event.create');
+    private $navigation = array('title'=>'Cursos','link'=>'course.index');
+    private $new_navigation = array('title'=>'Novo curso ','link'=>'course.create');
     //textos para as mensagens e títulos
     private $configs = array(
-        'new'                   => 'Novo evento ',
-        'msg-success-save'      => 'Evento cadastrado com sucesso',
-        'msg-error-save'        => 'Não foi possivel cadastrar o evento',
-        'msg-success-delete'    => 'Evento excluido com sucesso',
-        'msg-error-delete'      => 'Não foi possivel excluir o evento',
-        'msg-not-found'         => 'Evento não encontrado',
-        'location'              => 'eventos',
+        'new'                   => 'Novo curso ',
+        'msg-success-save'      => 'Curso cadastrado com sucesso',
+        'msg-error-save'        => 'Não foi possivel cadastrar o curso',
+        'msg-success-delete'    => 'Curso excluido com sucesso',
+        'msg-error-delete'      => 'Não foi possivel excluir o curso',
+        'msg-not-found'         => 'Curso não encontrado',
+        'location'              => 'cursos',
     );
     /**
      * Display a listing of the resource.
-     *
+     * 
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $events = Event::all();
-        $data[]=array(null,null, null);
-        if (isset($events)) {
+        $courses = course::all();
+        $data[]=array(null,null, null, null);
+        if (isset($courses)) {
             $data=array();
-            foreach ($events as $event) {
-                $buttons = Functions::buttons($event->id,10,$this->configs['location'],true);
+            foreach ($courses as $course) {
+                $buttons = Functions::buttons($course->id,10,$this->configs['location'],true);
                 $data[]=array(
-                    $event->title,
-                    Functions::status($event->active),
+                    $course->title,
+                    $course->duraction,
+                    Functions::status($course->active),
                     $buttons,
                 );
             }
         }
 
-        return view('admin.events.listAll',[
-            'title_postfix' => 'Eventos',
+        return view('admin.courses.listAll',[
+            'title_postfix' => 'Cursos',
             'navigation'    => $this->new_navigation,
             'data'          => $data,
             'accesslevel'   => 10,
         ]);
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -63,7 +63,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('admin.events.form',[
+        return view('admin.courses.form',[
             'title_postfix'     => $this->configs['new'],
             'navigation'        => $this->navigation,
         ]);
@@ -78,33 +78,35 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|unique:events',
+            'title' => 'required|unique:courses',
+            'duraction' => 'required',
         ]);
 
-        $event = new Event();
+        $course = new course();
         //Dados principais
-        $event->title      = $request->title;
-        $event->active     = $request->active;
-        $event->text       = $request->text;
-        $event->created_by = Auth::user()->name;
+        $course->title      = $request->title;
+        $course->active     = $request->active;
+        $course->duraction  = $request->duraction;
+        $course->text       = $request->text;
+        $course->created_by = Auth::user()->name;
 
-        if($event->save()){
+        if($course->save()){
             $images = $request->images;
             if(isset($images)){
                 for ($i=0; $i < count($images); $i++) {
                     $img= explode('.',$images[$i]);
                     $extension = $img[1];
-                    $new_name = $event->slug.'-'.$i.'.'.$extension;
+                    $new_name = $course->slug.'-'.$i.'.'.$extension;
                     /*Move as imagens do arquivo tmp para a pasta do arquivo */
-                    Storage::move('public/tmp/' . $images[$i], 'public/images/events/'.$event->id.'/'.$new_name);
+                    Storage::move('public/tmp/' . $images[$i], 'public/images/courses/'.$course->id.'/'.$new_name);
                     /*Cadastra as imagens no banco de dados */
-                    $eventImage = new EventImage();
-                    $eventImage->title=$new_name;
-                    $eventImage->featured=$request->featured[$i];
-                    $eventImage->event_id=$event->id;
-                    $eventImage->path='images/events/'.$event->id.'/';
-                    $eventImage->save();
-                    unset($eventImage);
+                    $courseImage = new courseImage();
+                    $courseImage->title=$new_name;
+                    $courseImage->featured=$request->featured[$i];
+                    $courseImage->course_id=$course->id;
+                    $courseImage->path='images/courses/'.$course->id.'/';
+                    $courseImage->save();
+                    unset($courseImage);
                 }
             }
             return response()->json(
@@ -124,27 +126,26 @@ class EventController extends Controller
         }
     }
 
-
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\Admin\Event  $event
+     * @param  \App\Model\Admin\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show(Course $course)
     {
-        if($event){
-            $image = $event->images()->where('featured',1)->first();
+        if($course){
+            $image = $course->images()->where('featured',1)->first();
             $data = array(
-                'title' => $event->title,
+                'title' => $course->title,
                 'body'  => array(
-                    'Título'            => $event->title,
-                    'Visualizações'     => $event->clicks,
-                    'Criado em'         => ($event->created_at ? date( 'd/m/Y H:i' , strtotime($event->created_at)) : ""),
-                    'Criado por'        => $event->created_by,
-                    'Atualizado em'     => ($event->updated_at ? date( 'd/m/Y H:i' , strtotime($event->updated_at)) : ""),
-                    'Atualizado por'    => $event->updated_by,
-                    'image'            => ($image ? url('storage/images/events/'.$event->id.'/'.$image->title) : url('storage/images/logos/logo.png') )
+                    'Título'            => $course->title,
+                    'Visualizações'     => $course->clicks,
+                    'Criado em'         => ($course->created_at ? date( 'd/m/Y H:i' , strtotime($course->created_at)) : ""),
+                    'Criado por'        => $course->created_by,
+                    'Atualizado em'     => ($course->updated_at ? date( 'd/m/Y H:i' , strtotime($course->updated_at)) : ""),
+                    'Atualizado por'    => $course->updated_by,
+                    'image'            => ($image ? url('storage/images/courses/'.$course->id.'/'.$image->title) : url('storage/images/logos/logo.png') )
                 )
             );
             return response()->json(
@@ -166,16 +167,16 @@ class EventController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\Admin\Event  $event
+     * @param  \App\Model\Admin\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit(Course $course)
     {
-        $images = $event->images()->get();
-        return view('admin.events.form',[
-            'title_postfix'     => $event->title,
+        $images = $course->images()->get();
+        return view('admin.courses.form',[
+            'title_postfix'     => $course->title,
             'navigation'        => $this->navigation,
-            'data'              => $event,
+            'data'              => $course,
             'images'            => $images,
         ]);
     }
@@ -184,25 +185,27 @@ class EventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Admin\Event  $event
+     * @param  \App\Model\Admin\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(Request $request, Course $course)
     {
         $request->validate([
             'title' => 'required',
+            'duraction' => 'required',
         ]);
         $images = $request->image;
 
         //Dados principais
-        $event->title = $request->title;
-        $event->active = $request->active;
-        $event->text = $request->text;
-        $event->updated_because = $request->updated_because;
-        $event->updated_by = Auth::user()->name;
+        $course->title = $request->title;
+        $course->active = $request->active;
+        $course->duraction  = $request->duraction;
+        $course->text = $request->text;
+        $course->updated_because = $request->updated_because;
+        $course->updated_by = Auth::user()->name;
 
             /*Pega as imagens que não foram excluidas na pasta */
-            $files = Storage::allFiles('public/images/events/'.$event->id);
+            $files = Storage::allFiles('public/images/courses/'.$course->id);
             if(isset($files)){
                 for ($i=0; $i < count($files); $i++) {
                     /*Pega nome da imagem */
@@ -212,27 +215,27 @@ class EventController extends Controller
                     Storage::move($files[$i], 'public/tmp/' . $image_name);
                 }
                 /*Limpa a pasta do arquivo */
-                Storage::deleteDirectory('public/images/events/'.$event->id);
+                Storage::deleteDirectory('public/images/courses/'.$course->id);
             }
-        if($event->save()){
-            DB::table('event_images')->where('event_id', $event->id)->delete();
+        if($course->save()){
+            DB::table('course_images')->where('course_id', $course->id)->delete();
             $images = $request->images;
             if(isset($images)){
                 for ($i=0; $i < count($images); $i++) {
                     $img= explode('.',$images[$i]);
                     $extension = $img[1];
-                    $new_name = $event->slug.'-'.$i.'.'.$extension;
+                    $new_name = $course->slug.'-'.$i.'.'.$extension;
                     /*Move as imagens do arquivo tmp para a pasta do arquivo */
-                    Storage::move('public/tmp/' . $images[$i], 'public/images/events/'.$event->id.'/'.$new_name);
+                    Storage::move('public/tmp/' . $images[$i], 'public/images/courses/'.$course->id.'/'.$new_name);
                     /*Cadastra as imagens no banco de dados */
 
-                    $eventImage = new EventImage();
-                    $eventImage->title=$new_name;
-                    $eventImage->featured=$request->featured[$i];
-                    $eventImage->event_id=$event->id;
-                    $eventImage->path='images/events/'.$event->id.'/';
-                    $eventImage->save();
-                    unset($eventImage);
+                    $courseImage = new courseImage();
+                    $courseImage->title=$new_name;
+                    $courseImage->featured=$request->featured[$i];
+                    $courseImage->course_id=$course->id;
+                    $courseImage->path='images/courses/'.$course->id.'/';
+                    $courseImage->save();
+                    unset($courseImage);
                 }
             }
             return response()->json(
@@ -255,17 +258,17 @@ class EventController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\Admin\Event  $event
+     * @param  \App\Model\Admin\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, Event $event)
+    public function destroy(Request $request, Course $course)
     {
-        $event->active = '3';
-        $event->deleted_because = $event->motive;
-        $event->deleted_by = Auth::user()->name;
-        $event->deleted_at = date( 'Y-m-d H:i:s');
+        $course->active = '3';
+        $course->deleted_because = $course->motive;
+        $course->deleted_by = Auth::user()->name;
+        $course->deleted_at = date( 'Y-m-d H:i:s');
 
-        if($event->save()){
+        if($course->save()){
             return response()->json(
                 [
                     'success'   => true,

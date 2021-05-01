@@ -3,14 +3,13 @@
 namespace App\Model\Admin;
 
 use Illuminate\Database\Eloquent\Model;
-
 use Illuminate\Support\Str;
 use Spatie\Activitylog\Traits\LogsActivity;
-class Article extends Model
+class Course extends Model
 {
     use LogsActivity;
 
-    protected $table = 'articles';
+    protected $table = 'courses';
     protected static $logAttributes = ['*'];
     /* set--Nomedainput--Attribute
      respeitando o case-sensitive
@@ -35,6 +34,6 @@ class Article extends Model
     ];
     public function images()
     {
-        return $this->hasMany(ArticleImage::class,'article_id','id');
+        return $this->hasMany(CourseImage::class,'course_id','id');
     }
 }

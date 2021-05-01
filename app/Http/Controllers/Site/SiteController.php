@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
-use App\Model\Admin\Article;
 use Illuminate\Http\Request;
+
 use App\Model\Admin\Config;
 use App\Model\Admin\ConfigAddress;
 
 use App\Model\Admin\Partner;
+use App\Model\Admin\Course;
 use App\Model\Admin\SocialMedia;
+use App\Model\Admin\Article;
 
 class SiteController extends Controller
 {
@@ -17,13 +19,18 @@ class SiteController extends Controller
     {
         $partners = Partner::where('active',1)->get();
         $socialMedias = SocialMedia::where('active',1)->get();
-        $articles = Article::where('active',1)->limit(4)->get();
+        $articles = Article::where('active',1)
+        ->orderBy('clicks','desc')
+        ->orderBy('created_at','desc')
+        ->limit(4)->get();
+        $courses = Course::where('active',1)->limit(3)->get();
         $config = Config::get()->first();
         return view('site.index',[
-            'title_postfix' => '',
-            'config' =>  $config,
-            'partners' =>  $partners,
-            'articles' =>  $articles,
+            'title_postfix' => 'Home',
+            'config'    =>  $config,
+            'partners'  =>  $partners,
+            'articles'  =>  $articles,
+            'courses'   =>  $courses,
             'socialMedias' =>  $socialMedias,
         ]);
     }
@@ -43,48 +50,78 @@ class SiteController extends Controller
     {
         $partners = Partner::where('active',1)->get();
         $socialMedias = SocialMedia::where('active',1)->get();
+        $articles = Article::where('active',1)
+        ->orderBy('clicks','desc')
+        ->orderBy('created_at','desc')
+        ->limit(4)->get();
         $config = Config::get()->first();
         return view('site.services',[
             'title_postfix' => 'Serviços',
             'config' =>  $config,
             'partners' =>  $partners,
             'socialMedias' =>  $socialMedias,
+            'articles'  =>  $articles,
         ]);
     }
+    //Artigos
     public function articles ()
     {
-        $partners = Partner::where('active',1)->get();
+        $articles = Article::where('active',1)->get();
         $socialMedias = SocialMedia::where('active',1)->get();
         $config = Config::get()->first();
         return view('site.articles',[
             'title_postfix' => 'Artigos',
             'config' =>  $config,
-            'partners' =>  $partners,
+            'articles' =>  $articles,
             'socialMedias' =>  $socialMedias,
         ]);
     }
+    //Cursos
     public function courses ()
     {
-        $partners = Partner::where('active',1)->get();
+        $courses = Course::where('active',1)->get();
         $socialMedias = SocialMedia::where('active',1)->get();
         $config = Config::get()->first();
         return view('site.courses',[
             'title_postfix' => 'Cursos',
             'config' =>  $config,
-            'partners' =>  $partners,
+            'courses' =>  $courses,
             'socialMedias' =>  $socialMedias,
         ]);
     }
+    public function course ($any)
+    {
+        
+        $course = Course::where('slug',$any)->first();
+        $socialMedias = SocialMedia::where('active',1)->get();
+        $config = Config::get()->first();
+        $courses = Course::where('active',1)->limit(3)->get();
+        
+        return view('site.course',[
+            'title_postfix' => 'Cursos',
+            'config' =>  $config,
+            'course' =>  $course,
+            'courses' =>  $courses,
+            'socialMedias' =>  $socialMedias,
+        ]);
+    }
+
     public function contact ()
     {
         $partners = Partner::where('active',1)->get();
         $socialMedias = SocialMedia::where('active',1)->get();
+        $articles = Article::where('active',1)
+        ->orderBy('clicks','desc')
+        ->orderBy('created_at','desc')
+        ->limit(4)->get();
         $config = Config::get()->first();
         return view('site.contacts',[
             'title_postfix' => 'Contatos',
             'config' =>  $config,
             'partners' =>  $partners,
             'socialMedias' =>  $socialMedias,
+            
+            'articles'  =>  $articles,
         ]);
     }
 }

@@ -51,14 +51,14 @@
                             <!-- small box -->
                                 <div class="small-box bg-primary">
                                     <div class="inner">
-                                        <h4 class="d-lg-none">{{$alerts}}</h4>
-                                        <h3 class="d-none d-lg-block">{{$alerts}}</h3>
-                                        <p>Avisos</p>
+                                        <h4 class="d-lg-none">{{$courses}}</h4>
+                                        <h3 class="d-none d-lg-block">{{$courses}}</h3>
+                                        <p>Cursos</p>
                                     </div>
                                     <div class="icon">
-                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <i class="fas fa-user-shield"></i>
                                     </div>
-                                    <a href="{{route('alert.index')}}" class="small-box-footer">Listar <i class="fas fa-arrow-circle-right"></i></a>
+                                    <a href="{{route('course.index')}}" class="small-box-footer">Listar <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                         <!-- ./col -->
@@ -130,6 +130,22 @@
                                         <i class="far fa-newspaper"></i>
                                     </div>
                                     <a href="{{route('subscriber.index')}}" class="small-box-footer">Listar <i class="fas fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        <!-- ./col -->
+                        <!-- small box -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                                <div class="small-box bg-primary">
+                                    <div class="inner">
+                                        <h4 class="d-lg-none">{{$alerts}}</h4>
+                                        <h3 class="d-none d-lg-block">{{$alerts}}</h3>
+                                        <p>Avisos</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <a href="{{route('alert.index')}}" class="small-box-footer">Listar <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                         <!-- ./col -->

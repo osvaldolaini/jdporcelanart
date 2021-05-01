@@ -18,10 +18,11 @@ class Event extends Model
     public function setTitleAttribute($value)
     {
         $this->attributes['title']=mb_strtoupper($value);
-        $this->attributes['slug']=Str::slug($value);
+        $this->attributes['slug']='spark-despachante-de-armas-'.Str::slug($value);
 
         $tags = str_replace('-', ', ', Str::slug($value));
-        $this->attributes['tags']= 'ASSGAPA, CSSGAPA, Clube em Canoas, avioes, salao, festas, espaco, eventos, 15 anos, casamentos, aluguel, '. $tags;
+        $tags = mb_strimwidth($tags, 0, 60, "");
+        $this->attributes['tags']= 'spark, armas, clube de tiro, gravatai, cachoeirinha'. $tags;
     }
     protected $fillable = [
         'id', 'active', 'title', 'slug', 'text','clicks','tags',

@@ -282,10 +282,17 @@ return [
         ],
         [
             'accesslevel' => 10,
+            'text'  => 'Eventos',
+            'url'   => 'Eventos',
+            'icon'  => 'fas fa-glass-cheers',
+            'active'=> ['Eventos', 'eventos*', 'regex:@^cursos/[0-9]+$@'],
+        ],
+        [
+            'accesslevel' => 10,
             'text'  => 'Cursos',
             'url'   => 'cursos',
             'icon'  => 'fas fa-user-shield',
-            'active'=> ['cursos', 'cursos*', 'regex:@^cursos/[0-9]+$@'],
+            'active'=> ['Cursos', 'cursos*', 'regex:@^cursos/[0-9]+$@'],
         ],
         [
             'accesslevel' => 10,

@@ -7,7 +7,7 @@ use App\Model\Admin\Alert;
 use Illuminate\Http\Request;
 
 use App\Model\Admin\Article;
-
+use App\Model\Admin\Course;
 use App\Model\Admin\Email;
 use App\Model\Admin\Event;
 use App\Model\Admin\Partner;
@@ -43,6 +43,7 @@ class HomeController extends Controller
         $socialMedias   = SocialMedia::where('active', 1)->count();
         $subscribers    = Subscriber::where('active', 1)->count();
         $newEmail       = Email::where('active', 1)->count();
+        $courses        = Course::where('active', 1)->count();
 
         $pag = array();
         $p=array();
@@ -95,6 +96,7 @@ class HomeController extends Controller
             'emails'        => $emails,
             'newEmail'      => $newEmail,
             'events'        => $events,
+            'courses'       => $courses,
             'partners'      => $partners,
             'socialMedias'  => $socialMedias,
             'subscribers'   => $subscribers,

@@ -20,6 +20,7 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/sobre', 'SiteController@about')->name('site.about');
     Route::get('/servicos', 'SiteController@services')->name('site.services');
     Route::get('/nossos-cursos', 'SiteController@courses')->name('site.courses');
+    Route::get('/nossos-cursos/{any}', 'SiteController@course')->name('site.course');
     Route::get('/artigos', 'SiteController@articles')->name('site.articles');
     Route::get('/contato', 'SiteController@contact')->name('site.contact');
 });
@@ -41,7 +42,8 @@ Route::group(['namespace' => 'Admin','middleware' => ['auth','RegisterLogging']]
     Route::resource('/assinantes','SubscriberController')->names('subscriber')->parameters(['assinantes' => 'subscriber'])->middleware('AccessLevel:10');
     Route::post('/send-response/{email}','EmailController@response')->name('email.response')->middleware('AccessLevel:10');
     Route::resource('/noticias','ArticleController')->names('article')->parameters(['noticias' => 'article'])->middleware('AccessLevel:10');
-    Route::resource('/cursos','EventController')->names('event')->parameters(['cursos' => 'event'])->middleware('AccessLevel:10');
+    Route::resource('/eventos','EventController')->names('event')->parameters(['eventos' => 'event'])->middleware('AccessLevel:10');
+    Route::resource('/cursos','CourseController')->names('course')->parameters(['cursos' => 'course'])->middleware('AccessLevel:10');
     Route::resource('/avisos','AlertController')->names('alert')->parameters(['avisos' => 'alert'])->middleware('AccessLevel:10');
     Route::resource('/views','ViewController')->names('view')->parameters(['views' => 'view'])->middleware('AccessLevel:10');
 });

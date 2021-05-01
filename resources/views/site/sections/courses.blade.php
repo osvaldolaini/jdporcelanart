@@ -1,5 +1,5 @@
-       <!-- ======= Courses Section ======= -->
-       <section class="section articles" id="articles">
+    <!-- ======= Courses Section ======= -->
+    <section class="section courses" id="courses">
         <div class="container">
             <div class="section-heading-wrap text-center mb-5">
                 <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Cursos</span></h2>
@@ -11,40 +11,34 @@
                     </picture >
                 </span>
             </div>
-
+ 
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4 gsap-reveal">
-                        <a href="#" class="main-property" style="background-image: url({{ url('storage/images/events/2/curso_1.jpg') }});">
-                            <span class="status">Duração 10h</span>
-                            <div class="prop-details">
-                                <span class="price">Valor sob consulta</span>
-                                <h3>Curso de controle de distúrbio civil</h3>
+                @if (isset($courses))
+                    <div class="row">
+                        @foreach ($courses as $course)
+                            <div class="col-md-4 gsap-reveal">
+                                    @foreach ($course->images as $images)
+                                        @if($images->featured == '1')
+                                            @php 
+                                                $img = 'storage/'.$images->path.'/'.$images->title; 
+                                                $alt = $images->title;
+                                            @endphp
+                                        @endif
+                                    @endforeach
+                                <a href="{{url('nossos-cursos/'.$course->slug)}}" class="main-property" style="background-image: url({{ url($img) }});">
+                                    <span class="status">Duração {{$course->duraction}}</span>
+                                    <div class="prop-details">
+                                        <span class="price">Valor sob consulta</span>
+                                        <h3>{{$course->title}}</h3>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
+                        @endforeach
                     </div>
-                    <div class="col-md-4 gsap-reveal">
-                        <a href="#" class="main-property"
-                            style="background-image: url({{ url('storage/images/events/2/curso_2.jpg') }});">
-                            <span class="status">Duração 8h</span>
-                            <div class="prop-details">
-                                <span class="price">Valor sob consulta</span>
-                                <h3>Curso de entrada tática</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 gsap-reveal">
-                        <a href="#" class="main-property"
-                            style="background-image: url({{ url('storage/images/events/2/curso_3.jpg') }});">
-                            <span class="status">Duração 6h</span>
-                            <div class="prop-details">
-                                <span class="price">Valor sob consulta</span>
-                                <h3>Curso de tiro de precisão</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                @endif
             </div>
-
+            <div class="col-lg-12 text-center pt-3">
+                <p class="gsap-reveal"><a href="{{url('nossos-cursos')}}" class="btn btn-outline-pill btn-custom-light">Mais cursos...</a></p>
+            </div>
         </div>
     </section><!-- End Courses Section -->
