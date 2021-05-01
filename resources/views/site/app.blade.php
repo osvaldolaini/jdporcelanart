@@ -9,7 +9,7 @@
     @include('site.partials.favicons')
     {{-- css --}}
     @include('site.assets.css')
-    
+
 
 </head>
 <body >
@@ -23,7 +23,7 @@
     @include('site.partials.footer')
 
     {{-- Custom Scripts --}}
-    @include('site.assets.js')
+    @include('site.assets.simple_js')
 
 </body>
 
