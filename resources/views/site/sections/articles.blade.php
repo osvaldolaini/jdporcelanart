@@ -14,9 +14,9 @@
 
             <div class="row blog align-items-stretch">
                 @if (isset($articles))
-                @php $id = 0; @endphp
+                    @php $id = 0; @endphp
                     @foreach ($articles as $article)
-                    @php $id += 1; 
+                    @php $id += 1;
                        switch ($id) {
                            case 1:
                                $col = 'col-lg-8';
@@ -39,8 +39,8 @@
                                 </div>
                                 @foreach ($article->images as $images)
                                     @if($images->featured == '1')
-                                       @php 
-                                            $img = 'storage/'.$images->path.'/'.$images->title; 
+                                       @php
+                                            $img = 'storage/'.$images->path.'/'.$images->title;
                                             $alt = $images->title;
                                        @endphp
                                     @endif

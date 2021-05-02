@@ -19,18 +19,18 @@ class SiteController extends Controller
     {
         $partners = Partner::where('active',1)->get();
         $socialMedias = SocialMedia::where('active',1)->get();
-        $articles = Article::where('active',1)
+        /*$articles = Article::where('active',1)
         ->orderBy('clicks','desc')
         ->orderBy('created_at','desc')
-        ->limit(4)->get();
-        $courses = Course::where('active',1)->limit(3)->get();
+        ->limit(4)->get();*/
+        /*$courses = Course::where('active',1)->limit(3)->get();*/
         $config = Config::get()->first();
         return view('site.index',[
             'title_postfix' => 'Home',
             'config'    =>  $config,
             'partners'  =>  $partners,
-            'articles'  =>  $articles,
-            'courses'   =>  $courses,
+            //'articles'  =>  $articles,
+            //'courses'   =>  $courses,
             'socialMedias' =>  $socialMedias,
         ]);
     }
@@ -148,7 +148,7 @@ class SiteController extends Controller
             'config' =>  $config,
             'partners' =>  $partners,
             'socialMedias' =>  $socialMedias,
-            
+
             'articles'  =>  $articles,
         ]);
     }

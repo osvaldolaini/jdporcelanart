@@ -12,9 +12,9 @@
                 </span>
             </div>
  
-            <div class="container">
+            <div class="container apiCourses">
                 @if (isset($courses))
-                    <div class="row">
+                    <div class="row apiCourses">
                         @foreach ($courses as $course)
                             <div class="col-md-4 gsap-reveal">
                                     @foreach ($course->images as $images)

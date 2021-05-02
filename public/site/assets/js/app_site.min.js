@@ -1,4 +1,5 @@
 var App = function () {
+
   // scroll
   var scrollWindow = function(){
     $(window).scroll(function() {
