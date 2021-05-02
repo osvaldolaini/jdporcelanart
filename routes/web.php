@@ -24,6 +24,8 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/artigos', 'SiteController@articles')->name('site.articles');
     Route::get('/artigos/{any}', 'SiteController@article')->name('site.article');
     Route::get('/contato', 'SiteController@contact')->name('site.contact');
+    Route::get('/termo-de-uso', 'SiteController@term')->name('site.term');
+    Route::get('/politica-de-privacidade', 'SiteController@politics')->name('site.politics');
 });
     Route::post('/enviar-email', 'Admin\EmailController@store')->name('email.store');
     Route::post('/newsletter', 'Admin\SubscriberController@store')->name('subscriber.store');

@@ -136,20 +136,30 @@ class SiteController extends Controller
 
     public function contact ()
     {
-        $partners = Partner::where('active',1)->get();
         $socialMedias = SocialMedia::where('active',1)->get();
-        $articles = Article::where('active',1)
-        ->orderBy('clicks','desc')
-        ->orderBy('created_at','desc')
-        ->limit(4)->get();
         $config = Config::get()->first();
         return view('site.contacts',[
             'title_postfix' => 'Contatos',
             'config' =>  $config,
-            'partners' =>  $partners,
             'socialMedias' =>  $socialMedias,
-
-            'articles'  =>  $articles,
+        ]);
+    }
+    public function term(){
+        $socialMedias = SocialMedia::where('active',1)->get();
+        $config = Config::get()->first();
+        return view('site.term',[
+            'title_postfix' => 'Termo de uso',
+            'config' =>  $config,
+            'socialMedias' =>  $socialMedias,
+        ]);
+    }
+    public function politics(){
+        $socialMedias = SocialMedia::where('active',1)->get();
+        $config = Config::get()->first();
+        return view('site.politics',[
+            'title_postfix' => 'Política de privacidade',
+            'config' =>  $config,
+            'socialMedias' =>  $socialMedias,
         ]);
     }
 }

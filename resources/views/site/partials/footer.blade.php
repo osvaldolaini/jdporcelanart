@@ -42,6 +42,8 @@
                             <li><a href="{{url('cursos')}}">Cursos</a></li>
                             <li><a href="{{url('artigos')}}">Artigos</a></li>
                             <li><a href="{{url('contato')}}">Contato</a></li>
+                            <li><a href="{{url('termo-de-uso')}}">Termo de uso</a></li>
+                            <li><a href="{{url('politica-de-privacidade')}}">Política de privacidade</a></li>
                         </ul>
                     </div>
                 </div>
