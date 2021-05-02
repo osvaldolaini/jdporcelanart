@@ -56,16 +56,18 @@ class HomeController extends Controller
                 $page .= $d[$i].' > ';
                 $link .= $d[$i].'/';
             }
-            if($d[3] == ''){
-                $cat = 'home';
+            //$cat = $d[3];
+            $cat = $d[2];
+            if($cat  == ''){
+                $category = 'home';
             }else{
-                $cat =$d[3];
+                $category = $cat;
             }
             $p[]=array(
                 'qtd'       => View::where('page', $key->page)->count(),
                 'link'      => $link,
                 'page'      => mb_strtoupper($page),
-                'category'  => mb_strtoupper($cat),
+                'category'  => mb_strtoupper($category),
             );
         }
         if ($p != ''){
