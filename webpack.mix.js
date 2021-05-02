@@ -56,6 +56,7 @@ mix.scripts('resources/views/site/template/js/app_site.js','public/site/assets/j
 .minify([
     'public/site/assets/css/newstyle.css',
     'public/site/assets/js/app_site.js',
+    'public/site/template/vendor/app_scripts.js',
 ])
 
 .version();

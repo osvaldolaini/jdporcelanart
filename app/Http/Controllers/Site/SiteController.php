@@ -17,8 +17,8 @@ class SiteController extends Controller
 {
     public function index ()
     {
-        $partners = Partner::where('active',1)->get();
-        $socialMedias = SocialMedia::where('active',1)->get();
+        $partners = Partner::select('link','image','slug')->where('active',1)->get();
+        $socialMedias = SocialMedia::select('link','icon')->where('active',1)->get();
         /*$articles = Article::where('active',1)
         ->orderBy('clicks','desc')
         ->orderBy('created_at','desc')

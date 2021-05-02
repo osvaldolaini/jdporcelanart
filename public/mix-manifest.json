@@ -27,7 +27,8 @@
     "/admin/template/switch/switch.min.css": "/admin/template/switch/switch.min.css?id=a689aef3c2a4c71930cf",
     "/admin/template/upload/uploads.min.css": "/admin/template/upload/uploads.min.css?id=c09a7e6b450fe98b0d40",
     "/admin/template/validate/css/validate.min.css": "/admin/template/validate/css/validate.min.css?id=623a8da046e8dfb6776d",
-    "/site/assets/js/app_site.js": "/site/assets/js/app_site.js?id=a4970ce5357dae850367",
+    "/site/assets/js/app_site.js": "/site/assets/js/app_site.js?id=1e8bb1e96b82bf1d6ac2",
     "/site/assets/css/newstyle.min.css": "/site/assets/css/newstyle.min.css?id=01cbe634020b36d22428",
-    "/site/assets/js/app_site.min.js": "/site/assets/js/app_site.min.js?id=a4970ce5357dae850367"
+    "/site/assets/js/app_site.min.js": "/site/assets/js/app_site.min.js?id=1e8bb1e96b82bf1d6ac2",
+    "/site/template/vendor/app_scripts.min.js": "/site/template/vendor/app_scripts.min.js?id=e9534fc53c0a73756b85"
 }

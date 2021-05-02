@@ -1,5 +1,5 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{ asset('site/template/vendor/app_scripts.js') }}"></script>
+    <script src="{{ asset('site/template/vendor/app_scripts.min.js') }}"></script>
 
     <script src="{{asset('admin/js/app_views.min.js')}}"></script>
     <script src="{{asset('site/assets/js/app_site.min.js')}}"></script>
