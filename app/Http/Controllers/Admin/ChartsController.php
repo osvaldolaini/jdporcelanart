@@ -68,11 +68,19 @@ class ChartsController extends Controller
         foreach ($access as $key) {
 
             $names = explode('/',$key->page);
-            if($names[3]){
+
+            /*if($names[3]){
                 $qry = $names[0].'/'.$names[1].'/'.$names[2].'/'.$names[3];
                 $page = $names[3];
             }else{
                 $qry = $names[0].'/'.$names[1].'/'.$names[2].'/';
+                $page = 'home';
+            }*/
+            if($names[2]){
+                $qry = $names[0].'/'.$names[1].'/'.$names[2];
+                $page = $names[2];
+            }else{
+                $qry = $names[0].'/'.$names[1];
                 $page = 'home';
             }
             $views = View::where('page', 'LIKE', "%{$qry}%")->count();

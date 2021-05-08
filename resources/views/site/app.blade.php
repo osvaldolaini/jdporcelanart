@@ -10,7 +10,7 @@
     {{-- css --}}
     @include('site.assets.css')
 
-
+<title>{{$config->title}} @yield('title_postfix', config('adminlte.title_postfix', ''))</title>
 </head>
 <body >
     {{-- Head --}}
