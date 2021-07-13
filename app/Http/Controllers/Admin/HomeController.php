@@ -11,6 +11,7 @@ use App\Model\Admin\Course;
 use App\Model\Admin\Email;
 use App\Model\Admin\Event;
 use App\Model\Admin\Partner;
+use App\Model\Admin\Portfolio;
 use App\Model\Admin\SocialMedia;
 use App\Model\Admin\Subscriber;
 use App\Model\Admin\View;
@@ -35,15 +36,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $alerts         = Alert::where('active', 1)->count();
         $articles       = Article::where('active', 1)->count();
         $emails         = Email::count();
-        $events         = Event::where('active', 1)->count();
         $partners       = Partner::where('active', 1)->count();
         $socialMedias   = SocialMedia::where('active', 1)->count();
         $subscribers    = Subscriber::where('active', 1)->count();
         $newEmail       = Email::where('active', 1)->count();
-        $courses        = Course::where('active', 1)->count();
+        $portfolios     = Portfolio::where('active', 1)->count();
 
         $pag = array();
         $p=array();
@@ -93,12 +92,10 @@ class HomeController extends Controller
         exit;*/
 
         return view('admin.home',[
-            'alerts'        => $alerts,
             'articles'      => $articles,
             'emails'        => $emails,
             'newEmail'      => $newEmail,
-            'events'        => $events,
-            'courses'       => $courses,
+            'portfolios'    => $portfolios,
             'partners'      => $partners,
             'socialMedias'  => $socialMedias,
             'subscribers'   => $subscribers,

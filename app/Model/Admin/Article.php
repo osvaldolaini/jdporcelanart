@@ -18,11 +18,11 @@ class Article extends Model
     public function setTitleAttribute($value)
     {
         $this->attributes['title']=mb_strtoupper($value);
-        $this->attributes['slug']='spark-despachante-de-armas-'.Str::slug($value);
+        $this->attributes['slug']='jd-porcelanart-'.Str::slug($value);
 
         $tags = str_replace('-', ', ', Str::slug($value));
         $tags = mb_strimwidth($tags, 0, 60, "");
-        $this->attributes['tags']= 'spark, armas, clube de tiro, gravatai, cachoeirinha'. $tags;
+        $this->attributes['tags']= 'jd-porcelanart, porcelanato, pias, cozinhas, banheiros'. $tags;
     }
     protected $fillable = [
         'id', 'active', 'title', 'slug', 'text', 'author', 'clicks','tags',

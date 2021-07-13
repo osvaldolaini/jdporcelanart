@@ -5,11 +5,11 @@ namespace App\Model\Admin;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Spatie\Activitylog\Traits\LogsActivity;
-class Course extends Model
+class Portfolio extends Model
 {
     use LogsActivity;
 
-    protected $table = 'courses';
+    protected $table = 'portfolios';
     protected static $logAttributes = ['*'];
     /* set--Nomedainput--Attribute
      respeitando o case-sensitive
@@ -17,11 +17,11 @@ class Course extends Model
     public function setTitleAttribute($value)
     {
         $this->attributes['title']=mb_strtoupper($value);
-        $this->attributes['slug']='spark-despachante-de-armas-'.Str::slug($value);
+        $this->attributes['slug']='jd-porcelanart-'.Str::slug($value);
 
         $tags = str_replace('-', ', ', Str::slug($value));
         $tags = mb_strimwidth($tags, 0, 60, "");
-        $this->attributes['tags']= 'spark, armas, clube de tiro, gravatai, cachoeirinha'. $tags;
+        $this->attributes['tags']= 'jd-porcelanart, porcelanato, pias, cozinhas, banheiros'. $tags;
     }
     protected $fillable = [
         'id', 'active', 'title', 'slug', 'text', 'author', 'clicks','tags',
@@ -34,6 +34,6 @@ class Course extends Model
     ];
     public function images()
     {
-        return $this->hasMany(CourseImage::class,'course_id','id');
+        return $this->hasMany(PortfolioImage::class,'portfolio_id','id');
     }
 }

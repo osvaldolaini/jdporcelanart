@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAlertsTable extends Migration
+class CreatePortfoliosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateAlertsTable extends Migration
      */
     public function up()
     {
-        Schema::create('alerts', function (Blueprint $table) {
+        Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
             $table->boolean('active')->nullable();
+            $table->string('slug')->nullable();
             $table->string('title')->nullable();
-            $table->longText('description')->nullable();
+            $table->string('duraction')->nullable();
+            $table->longText('text')->nullable();
+            $table->string('tags')->nullable();
             $table->string('clicks')->nullable();
             /*Alteração */
             $table->text('updated_because')->nullable();
@@ -39,6 +42,6 @@ class CreateAlertsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alerts');
+        Schema::dropIfExists('courses');
     }
 }
