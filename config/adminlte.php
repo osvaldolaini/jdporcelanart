@@ -14,9 +14,9 @@ return [
     |
     */
 
-    'title' =>  'SPARK',
+    'title' =>  "JD PORCELAN'ART",
     'title_prefix' => '',
-    'title_postfix' => '| Despachante de armas',
+    'title_postfix' => '| PORCELANATOS',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,13 +45,13 @@ return [
     |
     */
 
-    'logo' => 'SPARK',
+    'logo' => "JD PORCELAN'ART",
     'logo_img' => 'vendor/adminlte/dist/img/small_logo.png',
     //'logo_img' => 'vendor/adminlte/dist/img/assgapaLogo.png',
     'logo_img_class' => 'brand-image img-circle ',
     'logo_img_xl' => 'vendor/adminlte/dist/img/logo_1.png',
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'SPARK',
+    'logo_img_alt' => "JD PORCELAN'ART",
 
     /*
     |--------------------------------------------------------------------------

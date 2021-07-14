@@ -7,9 +7,7 @@ use App\Model\Admin\Alert;
 use Illuminate\Http\Request;
 
 use App\Model\Admin\Article;
-use App\Model\Admin\Course;
 use App\Model\Admin\Email;
-use App\Model\Admin\Event;
 use App\Model\Admin\Partner;
 use App\Model\Admin\Portfolio;
 use App\Model\Admin\SocialMedia;
