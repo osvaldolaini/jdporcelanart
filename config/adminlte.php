@@ -46,10 +46,10 @@ return [
     */
 
     'logo' => "JD PORCELAN'ART",
-    'logo_img' => 'vendor/adminlte/dist/img/small_logo.png',
+    'logo_img' => 'vendor/adminlte/dist/img/logo_small.png',
     //'logo_img' => 'vendor/adminlte/dist/img/assgapaLogo.png',
     'logo_img_class' => 'brand-image img-circle ',
-    'logo_img_xl' => 'vendor/adminlte/dist/img/logo_1.png',
+    'logo_img_xl' => 'vendor/adminlte/dist/img/logo_large.png',
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => "JD PORCELAN'ART",
 
@@ -275,24 +275,10 @@ return [
         ],
         [
             'accesslevel' => 10,
-            'text'  => 'Avisos',
-            'url'   => 'avisos',
-            'icon'  => 'fas fa-exclamation-triangle',
-            'active'=> ['avisos', 'avisos*', 'regex:@^avisos/[0-9]+$@'],
-        ],
-        [
-            'accesslevel' => 10,
-            'text'  => 'Eventos',
-            'url'   => 'Eventos',
-            'icon'  => 'fas fa-glass-cheers',
-            'active'=> ['Eventos', 'eventos*', 'regex:@^cursos/[0-9]+$@'],
-        ],
-        [
-            'accesslevel' => 10,
-            'text'  => 'Cursos',
-            'url'   => 'cursos',
+            'text'  => 'Serviços',
+            'url'   => 'servicos',
             'icon'  => 'fas fa-user-shield',
-            'active'=> ['Cursos', 'cursos*', 'regex:@^cursos/[0-9]+$@'],
+            'active'=> ['Servicos', 'servicos*', 'regex:@^Servicos/[0-9]+$@'],
         ],
         [
             'accesslevel' => 10,
