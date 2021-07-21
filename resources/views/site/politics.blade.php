@@ -173,5 +173,4 @@
     {{-- Articles --}}
     @include('site.sections.articles')
 
-
 @stop

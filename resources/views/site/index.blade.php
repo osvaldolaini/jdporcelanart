@@ -6,15 +6,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-7 mx-auto text-center">
-                    <!--<h1 class="heading gsap-reveal-hero">SPARK</h1>-->
-                    <h1 class="heading gsap-reveal-hero">
+                    <h1 class="heading gsap-reveal-hero">ARTE EM PORCELANATO</h1>
+                    <!--<h1 class="heading gsap-reveal-hero">
                         <picture class="lazyload img-fluid" width="300">
                             <source srcset="{{ url('storage/images/site/logo_cover.png') }}" />
                             <source srcset="{{ url('storage/images/site/logo_cover.webp') }}"/>
                             <img class="lazyload img-fluid" src="{{ url('storage/images/site/logo_cover.png') }}" width="300"/>
                         </picture >
-                    </h1>
-                    <h2 class="subheading gsap-reveal-hero">Despachante de armas</h2>
+                    </h1>-->
+                    <!--<h2 class="subheading gsap-reveal-hero">Despachante de armas</h2>-->
                 </div>
             </div>
         </div>
@@ -35,8 +35,8 @@
     {{-- Services --}}
     @include('site.sections.services')
 
-    {{-- Courses --}}
-    @include('site.sections.courses')
+    {{-- Portfólio --}}
+    @include('site.sections.portfolio')
 
     {{-- Gallery --}}
 

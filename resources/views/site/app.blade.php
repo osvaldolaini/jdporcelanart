@@ -22,6 +22,9 @@
     {{-- Footer --}}
     @include('site.partials.footer')
 
+    {{-- Copyright --}}
+    @include('site.partials.copyright')
+
     {{-- Custom Scripts --}}
     @include('site.assets.simple_js')
 

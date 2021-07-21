@@ -1,5 +1,5 @@
 <!-- ======= Footer Section ======= -->
-<footer class="footer jarallax" style="background-image: url({{ url('storage/images/site/bg.jpg') }});">
+<footer class="footer jarallax" style="background-image: url({{ url('storage/images/site/bg_footer.jpg') }});">
     <div class="footer_top">
         <div class="container">
             <div class="row">
@@ -39,7 +39,7 @@
                         <ul class="list-unstyled">
                             <li><a href="{{url('sobre')}}">Sobre</a></li>
                             <li><a href="{{url('servicos')}}">Serviços</a></li>
-                            <li><a href="{{url('cursos')}}">Cursos</a></li>
+                            <li><a href="{{url('trabalhos-realizados')}}">Portfólio</a></li>
                             <li><a href="{{url('artigos')}}">Artigos</a></li>
                             <li><a href="{{url('contato')}}">Contato</a></li>
                             <li><a href="{{url('termo-de-uso')}}">Termo de uso</a></li>
@@ -50,7 +50,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="single_footer">
                         <h4>Newsletter</h4>
-                        <p>Quer saber mais sobre porte, registro, armamento e legislações?
+                        <p>Quer saber mais sobre nossos serviços?
                             Inscreva-se para receber todas essas informações.
                         </p>
                         <div id="mc_embed_signup">
@@ -79,17 +79,3 @@
     </div>
 
 </footer><!-- End Footer Section -->
-
-    <div class="row text-right copyright">
-        <div class="col-lg-10">
-            <span>Copyright &copy; @php date('Y') @endphp - {{ $config->title }}, todos os direitos
-                reservados. Desenvolvido Por
-                <picture>
-                    <source data-srcset="{{ url('storage/images/logos/logo-ol.png') }}" class="lazyload" />
-                    <source data-srcset="{{ url('storage/images/logos/logo-ol.webp') }}" class="lazyload" />
-                    <img data-src="{{ url('storage/images/logos/logo-ol.png') }}" class="lazyload"
-                        style="width:10%" />
-                </picture>
-            </span>
-        </div>
-    </div>

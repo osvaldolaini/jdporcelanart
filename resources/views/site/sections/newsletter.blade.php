@@ -1,12 +1,12 @@
     <!-- ======= Newslatter Section ======= -->
-    <section class="section newslatter-section jarallax" id="newslatter" style="background-image: url({{ url('storage/images/site/newsletter_7.png') }});">
+    <section class="section newslatter-section jarallax" id="newslatter" style="background-image: url({{ url('storage/images/site/bg_newsletter.jpg') }});">
         <div class="d-flex align-items-center " >
             <div class="container">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-md-7 text-center heading-section heading-section-white " data-aos="fade-up"
+                    <div class="col-md-7 text-center heading-section " data-aos="fade-up"
                         data-aos-delay="0">
-                        <h2 class="heading-h2 " >Newsletter</h2>
-                        <h4>Quer saber mais sobre porte, registro, armamento e legislações?</h4>
+                        <h2 class="heading-h2 newslatter-font" >Newsletter</h2>
+                        <h4>Quer saber mais sobre nossos serviços?</h4>
                             <p>Inscreva-se para receber todas essas informações.</p>
                             <div class="newsletter" id="newsletter">
                                 <div class="newsletter_form_container">

@@ -1,8 +1,8 @@
     <!-- ======= Courses Section ======= -->
-    <section class="section courses" id="courses">
+    <section class="section portfolio" id="portfolio">
         <div class="container">
             <div class="section-heading-wrap text-center mb-5">
-                <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Cursos</span></h2>
+                <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Portfólio</span></h2>
                 <span class="gsap-reveal">
                     <picture class="lazyload img-fluid" alt="divider" width="150">
                         <source srcset="{{ url('storage/images/site/divider_alvo_gold.png') }}" />
@@ -11,25 +11,25 @@
                     </picture >
                 </span>
             </div>
- 
-            <div class="container apiCourses">
-                @if (isset($courses))
-                    <div class="row apiCourses">
-                        @foreach ($courses as $course)
+
+            <div class="container apiPortfolio">
+                @if (isset($portfolio))
+                    <div class="row apiPortfolio">
+                        @foreach ($portfolio as $work)
                             <div class="col-md-4 gsap-reveal">
-                                    @foreach ($course->images as $images)
+                                    @foreach ($work->images as $images)
                                         @if($images->featured == '1')
-                                            @php 
-                                                $img = 'storage/'.$images->path.'/'.$images->title; 
+                                            @php
+                                                $img = 'storage/'.$images->path.'/'.$images->title;
                                                 $alt = $images->title;
                                             @endphp
                                         @endif
                                     @endforeach
-                                <a href="{{url('nossos-cursos/'.$course->slug)}}" class="main-property" style="background-image: url({{ url($img) }});">
-                                    <span class="status">Duração {{$course->duraction}}</span>
+                                <a href="{{url('trabalhos-realizados/'.$work->slug)}}" class="main-property" style="background-image: url({{ url($img) }});">
+                                    <span class="status">Duração {{$work->duraction}}</span>
                                     <div class="prop-details">
                                         <span class="price">Valor sob consulta</span>
-                                        <h3>{{$course->title}}</h3>
+                                        <h3>{{$work->title}}</h3>
                                     </div>
                                 </a>
                             </div>
@@ -38,7 +38,7 @@
                 @endif
             </div>
             <div class="col-lg-12 text-center pt-3">
-                <p class="gsap-reveal"><a href="{{url('nossos-cursos')}}" class="btn btn-outline-pill btn-custom-light">Mais cursos...</a></p>
+                <p class="gsap-reveal"><a href="{{url('trabalhos-realizados')}}" class="btn btn-outline-pill btn-custom-light">Mais cursos...</a></p>
             </div>
         </div>
     </section><!-- End Courses Section -->

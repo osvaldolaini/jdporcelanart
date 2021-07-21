@@ -3,21 +3,23 @@
 *********************************/
 #main-nav{
     margin-top: 0px;
+    margin-right: 0px;
     width: 100%;
     align-items: center;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
 }
 .resize-on-scroll{
     background-color: rgba(0, 0, 0, 0.95);
-    transition: background-color 0.7s ease 0s; 
+    transition: background-color 0.7s ease 0s;
 }
 
 .logo{
+
     align-items: center;
-    text-align: center;
+    text-align: left;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
 }
 
 .logo img{
@@ -26,12 +28,13 @@
 
 .resize-on-scroll .logo img{
     width: 80%;
-    transition: width 0.7s ease 0s; 
+    transition: width 0.7s ease 0s;
 }
 
 .has-children a {
     position: relative;
-    text-decoration: none;  
+    text-decoration: none;
+    float: right;
 }
 
 .has-children a:before {
@@ -41,10 +44,10 @@
     height: 2px;
     margin-top: 12px;
     left: 0;
-    background-image: -webkit-gradient(linear, right top, left top, from($spark-color-primary), color-stop(51%, $spark-color-primary), to($spark-color-primary));
-    background-image: -webkit-linear-gradient(right, $spark-color-primary 0%, $spark-color-primary 51%, $spark-color-primary 100%);
-    background-image: -o-linear-gradient(right, $spark-color-primary 0%, $spark-color-primary 51%, $spark-color-primary 100%);
-    background-image: linear-gradient(to left, $spark-color-primary 0%, $spark-color-primary 51%, $spark-color-primary 100%); 
+    background-image: -webkit-gradient(linear, right top, left top, from($jdporcelanart-color-primary), color-stop(51%, $jdporcelanart-color-primary), to($jdporcelanart-color-primary));
+    background-image: -webkit-linear-gradient(right, $jdporcelanart-color-primary 0%, $jdporcelanart-color-primary 51%, $jdporcelanart-color-primary 100%);
+    background-image: -o-linear-gradient(right, $jdporcelanart-color-primary 0%, $jdporcelanart-color-primary 51%, $jdporcelanart-color-primary 100%);
+    background-image: linear-gradient(to left, $jdporcelanart-color-primary 0%, $jdporcelanart-color-primary 51%, $jdporcelanart-color-primary 100%);
     visibility: hidden;
     -webkit-transform: scaleX(0);
     -moz-transform: scaleX(0);

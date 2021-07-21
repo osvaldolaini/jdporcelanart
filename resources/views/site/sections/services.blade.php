@@ -16,30 +16,31 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="feature-v1" data-aos="fade-up" data-aos-delay="600">
                         <div class="wrap-icon">
-                            <i class="fas fa-5x fa-user-shield"></i>
+                            <i class="fas fa-5x fa-sink"></i>
                         </div>
-                        <h3>Registro de <br> Arma de Fogo</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                        <h3>Pias <br>Esculpidas </h3>
+                        <p>Pias modernas em porcelanato de alto padrão.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="feature-v1" data-aos="fade-up" data-aos-delay="700">
                         <div class="wrap-icon">
-                            <i class="fas fa-5x fa-file-signature"></i>
+                            <i class="fas fa-5x fa-person-booth"></i>
+                            <i class="fas fa-5x fa-toilet"></i>
                         </div>
-                        <h3>Assessoria para aquisição<br> de Arma de Fogo</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                        <h3>Banheiros <br> personalizados</h3>
+                        <p>Banheiros e box com personalização e design conceitual.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="feature-v1" data-aos="fade-up" data-aos-delay="800">
                         <div class="wrap-icon">
-                            <i class="fas fa-5x fa-address-card"></i>
+                            <i class="fab fa-5x fa-buromobelexperte"></i>
                         </div>
-                        <h3>Concessão de <br> CR</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                        <h3>Ilhas Gourmet e  <br>Bancadas</h3>
+                        <p>Cozinhas completas feitas com capricho e dedicação.
                         </p>
                     </div>
                 </div>

@@ -55,14 +55,14 @@
 	.heading {
 		font-size: 5rem;	
 		font-weight: 900;
-		color: $spark-color-primary;
+		color: $jdporcelanart-color-primary;
 		@include media-breakpoint-down(md) {
 			font-size: 3rem;
 		}
 	}
 	.blog-heading {
 		font-weight: 900;
-		color: $spark-color-primary;
+		color: $jdporcelanart-color-primary;
 		font-size: 4rem;	
 		@include media-breakpoint-down(md) {
 			font-size: 2rem;
@@ -73,7 +73,7 @@
 	}
 	.subheading {
 		font-size: 33px;
-		color: $spark-color-primary;
+		color: $jdporcelanart-color-primary;
 		@include media-breakpoint-down(md) {
 			font-size: 24px;
 		}
@@ -98,7 +98,7 @@
 	}
 	.mouse-label {
 		top: 0;
-  	color: $spark-color-primary;
+  	color: $jdporcelanart-color-primary;
   	font-size: 10px;
   	font-weight: 700;
   	letter-spacing: .05rem;
@@ -125,7 +125,7 @@
 	  left: 50%;
 	  margin-left: -12px;
 	  border-radius: 15px;
-	  border: 2px solid $spark-color-primary;
+	  border: 2px solid $jdporcelanart-color-primary;
 	  animation: intro 2s;
 	  .scroll {
 		  display: block;
@@ -133,7 +133,7 @@
 		  height: 3px;
 		  margin: 6px auto;
 		  border-radius: 4px;
-		  background: $spark-color-primary;
+		  background: $jdporcelanart-color-primary;
 		  animation: finger 2s infinite;
 		}
 

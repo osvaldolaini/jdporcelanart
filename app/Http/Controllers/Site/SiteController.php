@@ -12,6 +12,7 @@ use App\Model\Admin\Partner;
 use App\Model\Admin\Course;
 use App\Model\Admin\SocialMedia;
 use App\Model\Admin\Article;
+use App\Model\Admin\Portfolio;
 
 class SiteController extends Controller
 {
@@ -63,6 +64,8 @@ class SiteController extends Controller
             'articles'  =>  $articles,
         ]);
     }
+    
+    
     //Artigos
     public function articles ()
     {
@@ -102,34 +105,33 @@ class SiteController extends Controller
             'socialMedias' =>  $socialMedias,
         ]);
     }
-    //Cursos
-    public function courses ()
+    //Portifólio
+    public function portfolio ()
     {
-        $courses = Course::where('active',1)->get();
+        $portfolio = Portfolio::where('active',1)->get();
         $socialMedias = SocialMedia::where('active',1)->get();
         $config = Config::get()->first();
-        return view('site.courses',[
-            'title_postfix' => 'Cursos',
+        return view('site.portfolio',[
+            'title_postfix' => 'Portfolio',
             'config' =>  $config,
-            'courses' =>  $courses,
+            'portfolio' =>  $portfolio,
             'socialMedias' =>  $socialMedias,
         ]);
     }
-    public function course ($any)
+    public function work ($any)
     {
-        $course = Course::where('slug',$any)->first();
+        $portfolio = Portfolio::where('slug',$any)->first();
         $socialMedias = SocialMedia::where('active',1)->get();
         $config = Config::get()->first();
-        $courses = Course::where('active',1)->limit(3)->get();
+        $portfolio = Course::where('active',1)->limit(3)->get();
             //Visualizacoes
-            $course->clicks = $course->clicks + 1;
-            $course->save();
+            $portfolio->clicks = $course->clicks + 1;
+            $portfolio->save();
             //Visualizacoes
-        return view('site.course',[
-            'title_postfix' => 'Cursos',
+        return view('site.work',[
+            'title_postfix' => 'Portfolio',
             'config' =>  $config,
-            'course' =>  $course,
-            'courses' =>  $courses,
+            'portfolio' =>  $portfolio,
             'socialMedias' =>  $socialMedias,
         ]);
     }

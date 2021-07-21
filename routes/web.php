@@ -18,7 +18,9 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/', 'SiteController@index')->name('site.index');
     Route::get('/home', 'SiteController@index')->name('site.index');
     Route::get('/sobre', 'SiteController@about')->name('site.about');
-    Route::get('/nossos-servicos', 'SiteController@services')->name('site.services');
+    Route::get('/servicos', 'SiteController@services')->name('site.services');
+    Route::get('/trabalhos-realizados', 'SiteController@portfolio')->name('site.portfolio');
+    Route::get('/trabalhos-realizados/{any}', 'SiteController@work')->name('site.work');
     Route::get('/artigos', 'SiteController@articles')->name('site.articles');
     Route::get('/artigos/{any}', 'SiteController@article')->name('site.article');
     Route::get('/contato', 'SiteController@contact')->name('site.contact');
@@ -43,7 +45,7 @@ Route::group(['namespace' => 'Admin','middleware' => ['auth','RegisterLogging']]
     Route::resource('/assinantes','SubscriberController')->names('subscriber')->parameters(['assinantes' => 'subscriber'])->middleware('AccessLevel:10');
     Route::post('/send-response/{email}','EmailController@response')->name('email.response')->middleware('AccessLevel:10');
     Route::resource('/noticias','ArticleController')->names('article')->parameters(['noticias' => 'article'])->middleware('AccessLevel:10');
-    Route::resource('/servicos','PortfolioController')->names('portfolio')->parameters(['servicos' => 'portfolio'])->middleware('AccessLevel:10');
+    Route::resource('/portfolio','PortfolioController')->names('portfolio')->parameters(['portfolio' => 'portfolio'])->middleware('AccessLevel:10');
     Route::resource('/views','ViewController')->names('view')->parameters(['views' => 'view'])->middleware('AccessLevel:10');
 });
 Route::group(['namespace' => 'Admin','middleware' => ['auth','RegisterLogging']], function () {

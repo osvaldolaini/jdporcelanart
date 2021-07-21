@@ -31,14 +31,14 @@ $border_color: #edeff2;
         -webkit-transition: 0.5s;
         transition: 0.5s;
         &:hover, :hover{
-           color: $spark-color-secondary;
+           color: $jdporcelanart-color-secondary;
         }
     }
     p{
         color: $font_8;
     } 
     h1, h2, h3, h4, h5, h6{
-        color:  $spark-color-primary;
+        color:  $jdporcelanart-color-primary;
     }
 }
 
@@ -550,8 +550,8 @@ $border_color: #edeff2;
 
 .blog_item {
     margin-bottom: 50px;
-    border-top: solid 1px $spark-color-primary;
-    border-bottom: solid 1px $spark-color-primary;
+    border-top: solid 1px $jdporcelanart-color-primary;
+    border-bottom: solid 1px $jdporcelanart-color-primary;
 }
 
 .blog_details {
@@ -569,10 +569,10 @@ $border_color: #edeff2;
     }
 
     a {
-        color: $spark-color-primary;
+        color: $jdporcelanart-color-primary;
 
         &:hover {
-            color: $spark-color-secondary !important;
+            color: $jdporcelanart-color-secondary !important;
         }
     }
 
@@ -632,7 +632,7 @@ $border_color: #edeff2;
         left: 10px;
         display: block;
         color: $black;
-        background-color: $spark-color-primary;
+        background-color: $jdporcelanart-color-primary;
         padding: 8px 15px;
         border-radius: 5px;
 
@@ -834,7 +834,7 @@ $border_color: #edeff2;
                 a {
                     color: $white;
                     &:hover {
-                        color: $spark-color-secondary;
+                        color: $jdporcelanart-color-secondary;
                     }
                 }
 
@@ -935,8 +935,8 @@ $border_color: #edeff2;
 
 .blog-pagination .page-item.active {
     .page-link {
-        background-color: $spark-color-primary;
-        border-color: $spark-color-primary;
+        background-color: $jdporcelanart-color-primary;
+        border-color: $jdporcelanart-color-primary;
         color: $white;
         font-size: 10pt;
         font-weight: bold;

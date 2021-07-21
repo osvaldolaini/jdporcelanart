@@ -4,7 +4,7 @@
 .footer .footer_top {
     padding: 140px 0 100px;
     //background-color: $black;
-    border-top: 1px solid $spark-color-primary;
+    border-top: 1px solid $jdporcelanart-color-primary;
 }
 
 @media (max-width: 576px) {
@@ -73,30 +73,30 @@
 
 .footer .single_footer p {
     margin-bottom: 10px;
-    color: $spark-color-primary;
+    color: $jdporcelanart-color-primary;
 }
 
 .footer .single_footer .list-unstyled li a {
-    color: $spark-color-primary;
+    color: $jdporcelanart-color-primary;
     margin-bottom: 10px;
     display: inline-block;
     font-family: $font-family-sans-serif, $font-family-sans-serif-secondary,
         sans-serif;
 }
 .footer .single_footer .list-unstyled li a:hover {
-    color: $spark-color-secondary !important;
+    color: $jdporcelanart-color-secondary !important;
 }
 
 .footer hr {
-    background-color: $spark-color-primary;
+    background-color: $jdporcelanart-color-primary;
     margin-top: 50px;
     margin-bottom: 25px;
 }
 .footer_icon{
-    color: $spark-color-primary !important;
+    color: $jdporcelanart-color-primary !important;
     text-decoration: none;
 }
 .footer_icon:hover{
-    color: $spark-color-secondary !important;
+    color: $jdporcelanart-color-secondary !important;
     text-decoration: none;
 }
