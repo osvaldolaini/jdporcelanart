@@ -38,7 +38,7 @@
                 @endif
             </div>
             <div class="col-lg-12 text-center pt-3">
-                <p class="gsap-reveal"><a href="{{url('trabalhos-realizados')}}" class="btn btn-outline-pill btn-custom-light">Mais cursos...</a></p>
+                <p class="gsap-reveal"><a href="{{url('trabalhos-realizados')}}" class="btn btn-outline-pill btn-custom-light">Veja mais...</a></p>
             </div>
         </div>
     </section><!-- End Courses Section -->
