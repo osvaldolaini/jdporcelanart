@@ -29,7 +29,7 @@ Route::group(['namespace' => 'Site'], function () {
 });
     Route::post('/enviar-email', 'Admin\EmailController@store')->name('email.store');
     Route::post('/newsletter', 'Admin\SubscriberController@store')->name('subscriber.store');
-Auth::routes();
+Auth::routes(); 
 /*Rotas Painel*/
 /*Middleware RegisterLogging registra toda navegação do usuário*/
 Route::group(['namespace' => 'Admin','middleware' => ['auth','RegisterLogging']], function () {

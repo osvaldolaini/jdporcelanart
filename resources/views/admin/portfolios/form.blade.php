@@ -49,8 +49,8 @@
                     @endif
                 <div class="row">
                     <div class="col-lg-11 col-md-10 col-sm-10">
-                        <label for="title">*Curso</label>
-                        <input class="form-control" data-name="Título do curso" placeholder="Título do curso" value="{{ old('title', $data->title ?? '') }}" name="title" required="">
+                        <label for="title">*Trabalho</label>
+                        <input class="form-control" data-name="Título do trabalho" placeholder="Título do trabalho" value="{{ old('title', $data->title ?? '') }}" name="title" required="">
                     </div>
                     <div class="col-sm-2 col-md-2 col-lg-1">
                         <label for="active">Ativo</label>
@@ -75,7 +75,7 @@
                 <div class="row">
                     <div class="col-lg-11 col-md-10 col-sm-10">
                         <label for="duraction">*Duração</label>
-                        <input class="form-control" data-name="Duração do curso" placeholder="Duração do curso" value="{{ old('duraction', $data->duraction ?? '') }}" name="duraction" required="">
+                        <input class="form-control" data-name="Duração do trabalho" placeholder="Duração do trabalho" value="{{ old('duraction', $data->duraction ?? '') }}" name="duraction" required="">
                     </div>
                 </div>
                 <div class="row">

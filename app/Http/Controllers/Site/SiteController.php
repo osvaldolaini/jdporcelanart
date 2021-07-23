@@ -120,18 +120,19 @@ class SiteController extends Controller
     }
     public function work ($any)
     {
-        $portfolio = Portfolio::where('slug',$any)->first();
+        $work = Portfolio::where('slug',$any)->first();
         $socialMedias = SocialMedia::where('active',1)->get();
         $config = Config::get()->first();
-        $portfolio = Course::where('active',1)->limit(3)->get();
+        $portfolio = Portfolio::where('active',1)->limit(3)->get();
             //Visualizacoes
-            $portfolio->clicks = $course->clicks + 1;
-            $portfolio->save();
+            $work->clicks = $work->clicks + 1;
+            $work->save();
             //Visualizacoes
         return view('site.work',[
-            'title_postfix' => 'Portfolio',
+            'title_postfix' => 'Portfólio',
             'config' =>  $config,
             'portfolio' =>  $portfolio,
+            'work' =>  $work,
             'socialMedias' =>  $socialMedias,
         ]);
     }

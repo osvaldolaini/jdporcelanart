@@ -14,17 +14,17 @@ use Illuminate\Support\Facades\Storage;
 class PortfolioController extends Controller
 {
     //navegação
-    private $navigation = array('title'=>'Cursos','link'=>'portfolio.index');
-    private $new_navigation = array('title'=>'Novo curso ','link'=>'portfolio.create');
+    private $navigation = array('title'=>'Portfólio','link'=>'portfolio.index');
+    private $new_navigation = array('title'=>'Novo trabalho ','link'=>'portfolio.create');
     //textos para as mensagens e títulos
     private $configs = array(
-        'new'                   => 'Novo curso ',
-        'msg-success-save'      => 'Curso cadastrado com sucesso',
-        'msg-error-save'        => 'Não foi possivel cadastrar o curso',
-        'msg-success-delete'    => 'Curso excluido com sucesso',
-        'msg-error-delete'      => 'Não foi possivel excluir o curso',
-        'msg-not-found'         => 'Curso não encontrado',
-        'location'              => 'cursos',
+        'new'                   => 'Novo trabalho ',
+        'msg-success-save'      => 'Trabalho cadastrado com sucesso',
+        'msg-error-save'        => 'Não foi possivel cadastrar o trabalho',
+        'msg-success-delete'    => 'Trabalho excluido com sucesso',
+        'msg-error-delete'      => 'Não foi possivel excluir o trabalho',
+        'msg-not-found'         => 'Trabalho não encontrado',
+        'location'              => 'portfolio',
     );
     /**
      * Display a listing of the resource.
@@ -49,7 +49,7 @@ class PortfolioController extends Controller
         }
 
         return view('admin.portfolios.listAll',[
-            'title_postfix' => 'Cursos',
+            'title_postfix' => 'Portfólio',
             'navigation'    => $this->new_navigation,
             'data'          => $data,
             'accesslevel'   => 10,

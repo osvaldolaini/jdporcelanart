@@ -6,7 +6,6 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-7 mx-auto text-center">
-                    <!--<h1 class="heading gsap-reveal-hero">SPARK</h1>-->
                     <h1 class="heading gsap-reveal-hero">
                         {{$title_postfix}}
                     </h1>
@@ -27,11 +26,12 @@
             <span class="mouse-label">Role para baixo</span>
         </a>
     </section><!-- End Home Section -->
-    <!-- ======= Courses Section ======= -->
-    <section class="section courses" id="courses">
-        <div class="container">
+    <!-- End Portfolio Section -->
+    <div class="container newslatter-section mt-3">
+        <div class="portfolio-single-wrap section" id="portfolio-single-section">
+          <div class="portfolio-single-inner">
             <div class="section-heading-wrap text-center mb-5">
-                <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Cursos</span></h2>
+                <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">{{$work->title}}</span></h2>
                 <span class="gsap-reveal">
                     <picture class="lazyload img-fluid" alt="divider" width="150">
                         <source srcset="{{ url('storage/images/site/divider_alvo_gold.png') }}" />
@@ -40,34 +40,61 @@
                     </picture >
                 </span>
             </div>
- 
-            <div class="container">
-                @if (isset($portfolio))
-                    <div class="row">
-                        @foreach ($portfolio as $work)
-                            <div class="col-md-4 gsap-reveal">
-                                    @foreach ($work->images as $images)
-                                        @if($images->featured == '1')
-                                            @php 
-                                                $img = 'storage/'.$images->path.'/'.$images->title; 
-                                                $alt = $images->title;
-                                            @endphp
-                                        @endif
-                                    @endforeach
-                                <a href="{{url('nossos-cursos/'.$work->slug)}}" class="main-property" style="background-image: url({{ url($img) }});">
-                                    <span class="status">Duração {{$work->duraction}}</span>
-                                    <div class="prop-details">
-                                        <span class="price">Valor sob consulta</span>
-                                        <h3>{{$work->title}}</h3>
+            <div class="row justify-content-between mb-5">
+                <div class="col-12 mb-1">
+                    <section id="portfolio" class="portfolio">
+                        <div class="row blog align-items-stretch portfolio-container">
+                            @if (isset($work->images))
+                                @foreach ($work->images as $images)
+                                    <div class="col-lg-4 col-md-6 portfolio-item"  data-gall="portfolioGallery" data-aos="fade-up" data-aos-delay="0">
+                                            <div class="portfolio-wrap">
+                                                <figure class="mb-1" style="max-height:400px;">
+                                                    <img src="{{ url('storage/'.$images->path.'/'.$images->title) }}" alt="{{$images->title}}" class="lazyload w-100">
+                                                </figure>
+                                                <div class="portfolio-info">
+                                                    <h4>Clique para ampliar</h4>
+                                                    <div class="portfolio-links">
+                                                        <a href="{{ url('storage/'.$images->path.'/'.$images->title) }}" data-gall="portfolioGallery" class="venobox" title="{{$work->title}}"><i class="fas fa-3x fa-search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </div>
-                                </a>
+                                @endforeach
+                            @endif
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-12">
+                    <div class="row text-white">
+                        <div class="col-sm-6 col-md-6 col-lg-8">
+                            <div class="status">
+                                <span class="detail-label">Título: </span>
+                                <span class="detail-val">{{$work->title}}</span>
                             </div>
-                        @endforeach
+                            <div class="status">
+                                <span class="detail-label">Duração: </span>
+                                <span class="detail-val">{{$work->duraction}}</span>
+                            </div>
+                            <div class="status">
+                                <span class="detail-label">Descrição: </span>
+                                <span class="detail-val text-white text-justify">{!!$work->text!!}</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-4 ads">
+                            <div class="adsSmall"></div>
+                        </div>
                     </div>
-                @endif
+                </div>
             </div>
+
+          </div>
         </div>
-    </section><!-- End Courses Section -->
+    </div>
+
+
+    </section><!-- End Portfolio Section -->
+    {{-- Courses --}}
+    @include('site.sections.portfolio')
 
     {{-- Newslatter --}}
     @include('site.sections.newsletter')

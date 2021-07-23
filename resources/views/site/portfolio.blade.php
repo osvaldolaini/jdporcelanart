@@ -27,12 +27,11 @@
             <span class="mouse-label">Role para baixo</span>
         </a>
     </section><!-- End Home Section -->
-
-    <div class="container newslatter-section mt-3">
-        <div class="portfolio-single-wrap section" id="portfolio-single-section">
-          <div class="portfolio-single-inner">
+    <!-- ======= Courses Section ======= -->
+    <section class="section courses" id="courses">
+        <div class="container">
             <div class="section-heading-wrap text-center mb-5">
-                <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">{{$portfolio->title}}</span></h2>
+                <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Portfólio</span></h2>
                 <span class="gsap-reveal">
                     <picture class="lazyload img-fluid" alt="divider" width="150">
                         <source srcset="{{ url('storage/images/site/divider_alvo_gold.png') }}" />
@@ -41,45 +40,34 @@
                     </picture >
                 </span>
             </div>
-            <div class="row justify-content-between mb-5">
-              <div class="col-12 mb-1">
-                <div class="owl-carousel single-slider">
-                    @foreach ($portfolio->images as $images)
-                        <figure class="mb-1">
-                            <img src="{{ url('storage/'.$images->path.'/'.$images->title) }}" alt="{{$images->title}}" class="lazyload img-fluid">
-                        </figure>
-                    @endforeach
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-8">
-                        <div class="status">
-                            <span class="detail-label">Nome: </span>
-                            <span class="detail-val">{{$portfolio->title}}</span>
-                        </div>
-                        <div class="status">
-                            <span class="detail-label">Duração: </span>
-                            <span class="detail-val">{{$portfolio->duraction}}</span>
-                        </div>
-                        <div class="status">
-                            <span class="detail-label">Descrição: </span>
-                            <span class="detail-val text-white text-justify">{!!$portfolio->text!!}</span>
-                        </div>
+ 
+            <div class="container">
+                @if (isset($portfolio))
+                    <div class="row">
+                        @foreach ($portfolio as $work)
+                            <div class="col-md-4 gsap-reveal">
+                                    @foreach ($work->images as $images)
+                                        @if($images->featured == '1')
+                                            @php 
+                                                $img = 'storage/'.$images->path.'/'.$images->title; 
+                                                $alt = $images->title;
+                                            @endphp
+                                        @endif
+                                    @endforeach
+                                <a href="{{url('trabalhos-realizados/'.$work->slug)}}" class="main-property" style="background-image: url({{ url($img) }});">
+                                    <span class="status">Duração {{$work->duraction}}</span>
+                                    <div class="prop-details">
+                                        <span class="price">Valor sob consulta</span>
+                                        <h3>{{$work->title}}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4 ads">
-                        <div class="adsSmall"></div>
-                    </div>
-                </div>
-              </div>
+                @endif
             </div>
-
-          </div>
         </div>
-      </div>
-
-    {{-- Courses --}}
-    @include('site.sections.portfolio')
+    </section><!-- End Courses Section -->
 
     {{-- Newslatter --}}
     @include('site.sections.newsletter')

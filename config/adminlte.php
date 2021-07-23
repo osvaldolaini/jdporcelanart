@@ -275,10 +275,10 @@ return [
         ],
         [
             'accesslevel' => 10,
-            'text'  => 'Serviços',
-            'url'   => 'servicos',
+            'text'  => 'Portfólio',
+            'url'   => 'portfolio',
             'icon'  => 'fas fa-user-shield',
-            'active'=> ['Servicos', 'servicos*', 'regex:@^Servicos/[0-9]+$@'],
+            'active'=> ['portfolio', 'portfolio*', 'regex:@^portfolio/[0-9]+$@'],
         ],
         [
             'accesslevel' => 10,
