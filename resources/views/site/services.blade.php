@@ -44,28 +44,29 @@
                 <div class="col-lg-7 mb-5 mb-lg-0">
                     <figure class="dotted-bg gsap-reveal-img">
                         <picture class="lazyload img-fluid">
-                            <source srcset="{{ url('storage/images/site/registro.jpg') }}" />
-                            <source srcset="{{ url('storage/images/site/registro.webp') }}"/>
-                            <img class="lazyload img-fluid" src="{{ url('storage/images/site/registro.jpg') }}" alt="{{$config->about}}-registro-de-arma-de-fogo"/>
+                            <source srcset="{{ url('storage/images/site/pias.jpg') }}" />
+                            <source srcset="{{ url('storage/images/site/pias.webp') }}"/>
+                            <img class="lazyload img-fluid" src="{{ url('storage/images/site/pias.jpg') }}" alt="{{$config->about}}-registro-de-arma-de-fogo"/>
                         </picture >
                     </figure>
                 </div>
                 <div class="col-lg-4 pr-lg-5">
-                    <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Registro de <br> Arma de Fogo</span></h3>
-                        {!!$config->about!!}
+                    <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Pias <br>Esculpidas</span></h3>
+                        <p>Pias modernas em porcelanato de alto padrão.</p>
                 </div>
             </div>
             <div class="row mt-5 justify-content-between">
                 <div class="col-lg-4 pr-lg-5">
-                    <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Assessoria para aquisição<br> de Arma de Fogo</span></h3>
-                        {!!$config->about!!}
+                    <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Banheiros <br> personalizado</span></h3>
+                        <p>Banheiros e box com personalização e design conceitual.
+                        </p>
                 </div>
                 <div class="col-lg-7 mb-5 mb-lg-0">
                     <figure class="dotted-bg gsap-reveal-img">
                         <picture class="lazyload img-fluid">
-                            <source srcset="{{ url('storage/images/site/assessoria.jpg') }}" />
-                            <source srcset="{{ url('storage/images/site/assessoria.webp') }}"/>
-                            <img class="lazyload img-fluid" src="{{ url('storage/images/site/assessoria.jpg') }}" alt="{{$config->about}}-assessoria-para-aquisicao-de-arma-de-fogo"/>
+                            <source srcset="{{ url('storage/images/site/banheiro.jpg') }}" />
+                            <source srcset="{{ url('storage/images/site/banheiro.webp') }}"/>
+                            <img class="lazyload img-fluid" src="{{ url('storage/images/site/banheiro.jpg') }}" alt="{{$config->about}}-assessoria-para-aquisicao-de-arma-de-fogo"/>
                         </picture >
                     </figure>
                 </div>
@@ -74,15 +75,16 @@
                 <div class="col-lg-7 mb-5 mb-lg-0">
                     <figure class="dotted-bg gsap-reveal-img">
                         <picture class="lazyload img-fluid">
-                            <source srcset="{{ url('storage/images/site/cr.jpg') }}" />
-                            <source srcset="{{ url('storage/images/site/cr.webp') }}"/>
-                            <img class="lazyload img-fluid" src="{{ url('storage/images/site/cr.jpg') }}" alt="{{$config->about}}-concessao-de-cr-de-arma-de-fogo"/>
+                            <source srcset="{{ url('storage/images/site/ilhas.jpg') }}" />
+                            <source srcset="{{ url('storage/images/site/ilhas.webp') }}"/>
+                            <img class="lazyload img-fluid" src="{{ url('storage/images/site/ilhas.jpg') }}" alt="{{$config->about}}-concessao-de-cr-de-arma-de-fogo"/>
                         </picture >
                     </figure>
                 </div>
                 <div class="col-lg-4 pr-lg-5">
-                    <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Concessão de <br> CR</span></h3>
-                        {!!$config->about!!}
+                    <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Ilhas Gourmet e  <br>Bancadas</span></h3>
+                        <p>Cozinhas completas feitas com capricho e dedicação.
+                        </p>
                 </div>
             </div>
         </div>
