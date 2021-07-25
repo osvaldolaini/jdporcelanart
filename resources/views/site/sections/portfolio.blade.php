@@ -12,33 +12,49 @@
                 </span>
             </div>
 
-            <div class="container apiPortfolio">
+            <div class="row blog align-items-stretch">
                 @if (isset($portfolio))
-                    <div class="row apiPortfolio">
-                        @foreach ($portfolio as $work)
-                            <div class="col-md-4 gsap-reveal">
-                                    @foreach ($work->images as $images)
-                                        @if($images->featured == '1')
-                                            @php
-                                                $img = 'storage/'.$images->path.'/'.$images->title;
-                                                $alt = $images->title;
-                                            @endphp
-                                        @endif
-                                    @endforeach
-                                <a href="{{url('trabalhos-realizados/'.$work->slug)}}" class="main-property" style="background-image: url({{ url($img) }});">
-                                    <span class="status">Duração {{$work->duraction}}</span>
-                                    <div class="prop-details">
-                                        <span class="price">Valor sob consulta</span>
+                    @php $id = 0; @endphp
+                    @foreach ($portfolio as $work)
+                    @php $id += 1;
+                       switch ($id) {
+                           case 1:
+                               $col = 'col-lg-8';
+                               break;
+                            case 4:
+                               $col = 'col-lg-8';
+                               break;
+                           default:
+                                $col = 'col-lg-4';
+                               break;
+                       }
+                    @endphp
+                        <div class="col-sm-6 col-md-6 {{$col}} blog-post-entry " data-aos="fade-up" data-aos-delay="0">
+                            <a href="{{url('trabalhos-realizados/'.$work->slug)}}" class="grid-item blog-item w-100 h-100">
+                                <div class="overlay">
+                                    <div class="blog-item-content">
                                         <h3>{{$work->title}}</h3>
+                                        <p class="post-meta">{{$work->created_by}} <span class="small">&bullet;</span> {{($work->created_at ? date( 'd/m/Y H:i' , strtotime($work->created_at)) : "")}}</p>
                                     </div>
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
+                                </div>
+                                @foreach ($work->images as $images)
+                                    @if($images->featured == '1')
+                                       @php
+                                            $img = 'storage/'.$images->path.'/'.$images->title;
+                                            $alt = $images->title;
+                                       @endphp
+                                    @endif
+                                @endforeach
+                                <img src="{{ url($img) }}" class="lazyload img-fluid" alt="{{$alt}}" />
+                            </a>
+                        </div>
+                    @endforeach
                 @endif
-            </div>
-            <div class="col-lg-12 text-center pt-3">
-                <p class="gsap-reveal"><a href="{{url('trabalhos-realizados')}}" class="btn btn-outline-pill btn-custom-light">Veja mais...</a></p>
+
+                <div class="col-lg-12 text-center pt-3">
+                    <p class="gsap-reveal"><a href="{{url('trabalhos-realizados')}}" class="btn btn-outline-pill btn-custom-light">Veja mais...</a></p>
+                </div>
+
             </div>
         </div>
     </section><!-- End Courses Section -->

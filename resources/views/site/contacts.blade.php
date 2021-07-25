@@ -34,8 +34,8 @@
     {{-- Newslatter --}}
     @include('site.sections.newsletter')
 
-    {{-- Articles --}}
-    @include('site.sections.articles')
+    {{-- Portfólio --}}
+    @include('site.sections.portfolio')
 
 
 @stop

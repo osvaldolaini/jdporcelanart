@@ -40,8 +40,8 @@
 
     {{-- Gallery --}}
 
-    {{-- Articles --}}
-    @include('site.sections.articles')
+    {{-- Articles
+    @include('site.sections.articles')--}}
 
     {{-- Newslatter --}}
     @include('site.sections.newsletter')

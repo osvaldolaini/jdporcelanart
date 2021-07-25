@@ -20,10 +20,10 @@ class SiteController extends Controller
     {
         $partners = Partner::select('link','image','slug')->where('active',1)->get();
         $socialMedias = SocialMedia::select('link','icon')->where('active',1)->get();
-        /*$articles = Article::where('active',1)
+        $portfolio = Portfolio::where('active',1)
         ->orderBy('clicks','desc')
         ->orderBy('created_at','desc')
-        ->limit(4)->get();*/
+        ->limit(4)->get();
         /*$courses = Course::where('active',1)->limit(3)->get();*/
         $config = Config::get()->first();
         return view('site.index',[
@@ -31,7 +31,7 @@ class SiteController extends Controller
             'config'    =>  $config,
             'partners'  =>  $partners,
             //'articles'  =>  $articles,
-            //'courses'   =>  $courses,
+            'portfolio'   =>  $portfolio,
             'socialMedias' =>  $socialMedias,
         ]);
     }
@@ -40,10 +40,15 @@ class SiteController extends Controller
         $partners = Partner::where('active',1)->get();
         $socialMedias = SocialMedia::where('active',1)->get();
         $config = Config::get()->first();
+        $portfolio = Portfolio::where('active',1)
+        ->orderBy('clicks','desc')
+        ->orderBy('created_at','desc')
+        ->limit(4)->get();
         return view('site.about',[
             'title_postfix' => 'Sobre',
             'config' =>  $config,
             'partners' =>  $partners,
+            'portfolio'   =>  $portfolio,
             'socialMedias' =>  $socialMedias,
         ]);
     }
@@ -56,16 +61,21 @@ class SiteController extends Controller
         ->orderBy('created_at','desc')
         ->limit(4)->get();
         $config = Config::get()->first();
+        $portfolio = Portfolio::where('active',1)
+        ->orderBy('clicks','desc')
+        ->orderBy('created_at','desc')
+        ->limit(4)->get();
         return view('site.services',[
             'title_postfix' => 'Serviços',
             'config' =>  $config,
             'partners' =>  $partners,
+            'portfolio'   =>  $portfolio,
             'socialMedias' =>  $socialMedias,
             'articles'  =>  $articles,
         ]);
     }
-    
-    
+
+
     //Artigos
     public function articles ()
     {
@@ -141,27 +151,42 @@ class SiteController extends Controller
     {
         $socialMedias = SocialMedia::where('active',1)->get();
         $config = Config::get()->first();
+        $portfolio = Portfolio::where('active',1)
+        ->orderBy('clicks','desc')
+        ->orderBy('created_at','desc')
+        ->limit(4)->get();
         return view('site.contacts',[
             'title_postfix' => 'Contatos',
             'config' =>  $config,
+            'portfolio'   =>  $portfolio,
             'socialMedias' =>  $socialMedias,
         ]);
     }
     public function term(){
         $socialMedias = SocialMedia::where('active',1)->get();
         $config = Config::get()->first();
+        $portfolio = Portfolio::where('active',1)
+        ->orderBy('clicks','desc')
+        ->orderBy('created_at','desc')
+        ->limit(4)->get();
         return view('site.term',[
             'title_postfix' => 'Termo de uso',
             'config' =>  $config,
+            'portfolio'   =>  $portfolio,
             'socialMedias' =>  $socialMedias,
         ]);
     }
     public function politics(){
         $socialMedias = SocialMedia::where('active',1)->get();
         $config = Config::get()->first();
+        $portfolio = Portfolio::where('active',1)
+        ->orderBy('clicks','desc')
+        ->orderBy('created_at','desc')
+        ->limit(4)->get();
         return view('site.politics',[
             'title_postfix' => 'Política de privacidade',
             'config' =>  $config,
+            'portfolio'   =>  $portfolio,
             'socialMedias' =>  $socialMedias,
         ]);
     }
