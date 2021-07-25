@@ -17,7 +17,7 @@
                     <form method="post" class="form-outline-style" id="contactForm" >
                         <div class="form-group row mb-0">
                             <div class="col-lg-6 form-group gsap-reveal">
-                                <label for="name">Name</label>
+                                <label for="name">Nome</label>
                                 <input name="name" type="text" class="form-control" id="name">
                             </div>
                             <div class="col-lg-6 form-group gsap-reveal">

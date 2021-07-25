@@ -37,9 +37,9 @@
                 <li class="has-children">
                   <a href="{{url('trabalhos-realizados')}}" class="nav-link {{ Request::is('trabalhos-realizados*') ? 'active' : null }}">PORTFÓLIO</a>
                 </li>
-                <li class="has-children">
+                <!--<li class="has-children">
                   <a href="{{url('artigos')}}" class="nav-link {{ Request::is('artigos*') ? 'active' : null }}">ARTIGOS</a>
-                </li>
+                </li>-->
                 <li class="has-children">
                   <a href="{{url('contato')}}" class="nav-link {{ Request::is('contato*') ? 'active' : null }}">CONTATO</a>
                 </li>
@@ -69,9 +69,9 @@
           <li class="nav-item">
             <a class="nav-link {{ Request::is('nossos-servicos*') ? 'active' : null }}" href="{{url('nossos-servicos')}}">SERVIÇOS</a>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link {{ Request::is('artigos*') ? 'active' : null }}" href="{{url('artigos')}}">ARTIGOS</a>
-          </li>
+          </li>-->
           <li class="nav-item">
             <a class="nav-link {{ Request::is('contato*') ? 'active' : null }}" href="{{url('contato')}}"></i> CONTATO</a>
           </li>

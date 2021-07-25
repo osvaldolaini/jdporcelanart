@@ -40,7 +40,7 @@
                             <li><a href="{{url('sobre')}}">Sobre</a></li>
                             <li><a href="{{url('servicos')}}">Serviços</a></li>
                             <li><a href="{{url('trabalhos-realizados')}}">Portfólio</a></li>
-                            <li><a href="{{url('artigos')}}">Artigos</a></li>
+                            <!--<li><a href="{{url('artigos')}}">Artigos</a></li>-->
                             <li><a href="{{url('contato')}}">Contato</a></li>
                             <li><a href="{{url('termo-de-uso')}}">Termo de uso</a></li>
                             <li><a href="{{url('politica-de-privacidade')}}">Política de privacidade</a></li>
