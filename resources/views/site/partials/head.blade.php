@@ -67,7 +67,10 @@
             <a class="nav-link {{ Request::is('sobre*') ? 'active' : null }}" href="{{url('sobre')}}">SOBRE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('nossos-servicos*') ? 'active' : null }}" href="{{url('nossos-servicos')}}">SERVIÇOS</a>
+            <a class="nav-link {{ Request::is('servicos*') ? 'active' : null }}" href="{{url('servicos')}}">SERVIÇOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('trabalhos-realizados*') ? 'active' : null }}" href="{{url('trabalhos-realizados')}}">PORTFÓLIO</a>
           </li>
           <!--<li class="nav-item">
             <a class="nav-link {{ Request::is('artigos*') ? 'active' : null }}" href="{{url('artigos')}}">ARTIGOS</a>
