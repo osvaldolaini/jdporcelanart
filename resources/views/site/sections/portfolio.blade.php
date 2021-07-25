@@ -34,7 +34,12 @@
                                 <div class="overlay">
                                     <div class="blog-item-content">
                                         <h3>{{$work->title}}</h3>
-                                        <p class="post-meta"><!--{{$work->created_by}}-->Postado em <span class="small">&bullet;</span> {{($work->created_at ? date( 'd/m/Y H:i' , strtotime($work->created_at)) : "")}}</p>
+                                        <p class="post-meta">
+                                            <!--{{$work->created_by}}-->
+                                            Postado em <span class="small">&bullet;</span>
+                                            {{($work->created_at ? date( 'd/m/Y H:i' , strtotime($work->created_at)) : "")}}
+                                            <span class="small">&bullet;</span> <i class="fas fa-eye"></i> {{$work->clicks}}
+                                        </p>
                                     </div>
                                 </div>
                                 @foreach ($work->images as $images)
