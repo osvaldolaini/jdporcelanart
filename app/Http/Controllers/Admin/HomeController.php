@@ -53,8 +53,8 @@ class HomeController extends Controller
                 $page .= $d[$i].' > ';
                 $link .= $d[$i].'/';
             }
-            $cat = $d[3];
-            //$cat = $d[1];
+            //$cat = $d[3];
+            $cat = $d[1];
             if($cat  == ''){
                 $category = 'home';
             }else{
