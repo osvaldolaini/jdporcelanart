@@ -1,2 +1,4 @@
+Sitemap: https://www.jdporcelanart.com.br/sitemap.xml
 User-agent: *
 Disallow:
+Disallow: https://www.jdporcelanart.com.br/painel-admin
