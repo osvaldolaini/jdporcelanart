@@ -266,13 +266,13 @@ return [
             'active'=> ['parceiros', 'parceiros*', 'regex:@^parceiros/[0-9]+$@'],
         ],
 
-        [
+        /*[
             'accesslevel' => 10,
             'text'  => 'Notícias',
             'url'   => 'noticias',
             'icon'  => 'fas fa-newspaper',
             'active'=> ['noticias', 'noticias*', 'regex:@^noticias/[0-9]+$@'],
-        ],
+        ],*/
         [
             'accesslevel' => 10,
             'text'  => 'Portfólio',
