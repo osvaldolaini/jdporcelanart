@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Model\Admin\Course;
+use App\Model\Admin\Portfolio;
 use Illuminate\Http\Request;
 
-class CoursesController extends Controller
+class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,29 +15,35 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses = Course::select('id','title','slug','duraction')->where('active',1)->limit(3)->get();
+        $portfolio = Portfolio::select('id','title','slug','created_at','created_by','clicks')->where('active',1)
+        ->orderBy('clicks','desc')
+        ->orderBy('created_at','desc')
+        ->limit(4)->get();
 
-        $apiCourse = array();
-        foreach ($courses as $course) {
-            foreach ($course->images as $images){
+        $apiPortfolio = array();
+        foreach ($portfolio  as $work) {
+            foreach ($work->images as $images){
                 if($images->featured == '1'){
                     $img = 'storage/'.$images->path.'/'.$images->title;
                     $alt = $images->title;
                 }
             }
-            $apiCourse[]=array(
+            $apiPortfolio[]=array(
                 'src'           => url($img),
                 'alt'           => $alt,
-                'slug'          => url('nossos-cursos/'.$course->slug),
-                'title'         => $course->title,
-                'duraction'     => $course->duraction,
+                'slug'          => url('trabalhos-realizados/'.$work->slug),
+                'title'         => $work->title,
+                'clicks'        => $work->clicks,
+                'created_by'    => $work->created_by,
+                'created_at'    => ($work->created_at ? date( 'd/m/Y H:i' , strtotime($work->created_at)) : ""),
             );
         }
-        if(isset($apiCourse)){
+        if(isset($apiPortfolio)){
             return response()->json(
                 [
                     'success'=> true,
-                    'data'   => $apiCourse,
+                    'data'   => $apiPortfolio,
+                    'more'   => url('trabalhos-realizados'),
                 ]
             );
         }else{
@@ -74,10 +80,10 @@ class CoursesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\Admin\Course  $course
+     * @param  \App\Model\Admin\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show(Portfolio $portfolio)
     {
         //
     }
@@ -85,10 +91,10 @@ class CoursesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\Admin\Course  $course
+     * @param  \App\Model\Admin\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(Portfolio $portfolio)
     {
         //
     }
@@ -97,10 +103,10 @@ class CoursesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Admin\Course  $course
+     * @param  \App\Model\Admin\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, Portfolio $portfolio)
     {
         //
     }
@@ -108,10 +114,10 @@ class CoursesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\Admin\Course  $course
+     * @param  \App\Model\Admin\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(Portfolio $portfolio)
     {
         //
     }
